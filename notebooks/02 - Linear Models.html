@@ -53,6 +53,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Lecture 3: Kernelization" href="03%20-%20Kernelization.html" />
@@ -125,10 +126,6 @@
 
     </div>
 </nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
 
 </div>
 
@@ -761,7 +758,11 @@
             
               <div>
                 
-  <div class="cell docutils container">
+  <div class="tex2jax_ignore mathjax_ignore section" id="lecture-2-linear-models">
+<h1>Lecture 2: Linear models<a class="headerlink" href="#lecture-2-linear-models" title="Permalink to this headline">¶</a></h1>
+<p><strong>Basics of modeling, optimization, and regularization</strong></p>
+<p>Joaquin Vanschoren</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -782,10 +783,6 @@
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="lecture-2-linear-models">
-<h1>Lecture 2: Linear models<a class="headerlink" href="#lecture-2-linear-models" title="Permalink to this headline">¶</a></h1>
-<p><strong>Basics of modeling, optimization, and regularization</strong></p>
-<p>Joaquin Vanschoren</p>
 <div class="section" id="notation-and-definitions">
 <h2>Notation and Definitions<a class="headerlink" href="#notation-and-definitions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -824,7 +821,7 @@
 3.0 &amp; 0.6 
 \end{bmatrix}\)</span></p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">3.24</span> <span class="p">,</span> <span class="mf">1.2</span> <span class="p">],[</span><span class="mf">2.24</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],[</span><span class="mf">3.0</span> <span class="p">,</span> <span class="mf">0.6</span> <span class="p">]])</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]);</span>
@@ -908,7 +905,7 @@ $<span class="math notranslate nohighlight">\(\sum_{i=0}^{p} = x_0 + x_1 + ... +
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
@@ -959,10 +956,10 @@ $<span class="math notranslate nohighlight">\(\sum_{i=0}^{p} = x_0 + x_1 + ... +
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6c49c358a0b047db972098e78fd9e21a"}
+{"version_major": 2, "version_minor": 0, "model_id": "5de76444839f42e6adcc9c8528d23608"}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="n">plot_gradient</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
@@ -1020,7 +1017,7 @@ $<span class="math notranslate nohighlight">\(\underset{\mathbf{w}}{\operatornam
 </ul>
 <div class="math notranslate nohighlight">
 \[\hat{y} = \mathbf{w}\mathbf{x} + w_0 = \sum_{i=1}^{p} w_i \cdot x_i + w_0 = w_1 \cdot x_1 + w_2 \cdot x_2 + ... + w_p \cdot x_p + w_0 \]</div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -1129,7 +1126,7 @@ $<span class="math notranslate nohighlight">\(w^{*} = (X^{T}X)^{-1} X^T Y\)</spa
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="c1"># Some convex function to represent the loss</span>
@@ -1168,10 +1165,10 @@ $<span class="math notranslate nohighlight">\(w^{*} = (X^{T}X)^{-1} X^T Y\)</spa
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "b11cf7e9e202464882a8dc677cd491a2"}
+{"version_major": 2, "version_minor": 0, "model_id": "0520da96b68f44919f6f05bec18ae3e0"}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="n">plot_learning_rate</span><span class="p">(</span><span class="n">learn_rate</span><span class="o">=</span><span class="mf">0.21</span><span class="p">,</span> <span class="n">exp_decay</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1232,7 +1229,7 @@ $<span class="math notranslate nohighlight">\(w^{*} = (X^{T}X)^{-1} X^T Y\)</spa
 <span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
@@ -1245,7 +1242,7 @@ $<span class="math notranslate nohighlight">\(w^{*} = (X^{T}X)^{-1} X^T Y\)</spa
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Weights (coefficients): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">40</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bias (intercept): </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">intercept_</span><span class="p">))</span>
@@ -1264,7 +1261,7 @@ Bias (intercept): 30.93456367364078
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training set score (R^2): </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_B_train</span><span class="p">,</span> <span class="n">y_B_train</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test set score (R^2): </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_B_test</span><span class="p">,</span> <span class="n">y_B_test</span><span class="p">)))</span>
@@ -1321,7 +1318,7 @@ Test set score (R^2): 0.61
 <span class="n">lr</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
 <span class="n">ridge</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_B_train</span><span class="p">,</span> <span class="n">y_B_train</span><span class="p">)</span>
@@ -1349,7 +1346,7 @@ Test set score: 0.75
 <li><p>We can plot the weight values for differents levels of regularization to explore the effect of <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
 <li><p>Increasing regularization decreases the values of the coefficients, but never to 0.</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
@@ -1372,10 +1369,10 @@ Test set score: 0.75
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "46b53e0c104e43d9a29ce7eb327a8ace"}
+{"version_major": 2, "version_minor": 0, "model_id": "ee4ebc45797347a5b12a5912793adcc3"}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
@@ -1392,7 +1389,7 @@ Test set score: 0.75
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">ai</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alpha</span><span class="p">)))</span>
@@ -1434,7 +1431,7 @@ Test set score: 0.75
 </li>
 <li><p>Scaling the data typically helps (and changes the optimal <span class="math notranslate nohighlight">\(\alpha\)</span> value)</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mglearn</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plot_ridge_n_samples</span><span class="p">()</span>
 </pre></div>
@@ -1443,7 +1440,7 @@ Test set score: 0.75
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">0</span><span class="n">t</span><span class="o">/</span><span class="mi">5</span><span class="n">d8ttqzd773fy0wq3h5db0xr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_73919</span><span class="o">/</span><span class="mf">1377805524.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">0</span><span class="n">t</span><span class="o">/</span><span class="mi">5</span><span class="n">d8ttqzd773fy0wq3h5db0xr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_86697</span><span class="o">/</span><span class="mf">1377805524.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mglearn</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plot_ridge_n_samples</span><span class="p">()</span>
 
 <span class="nn">~/Documents/mlcourse/master/notebooks/mglearn/plot_ridge.py</span> in <span class="ni">plot_ridge_n_samples</span><span class="nt">()</span>
@@ -1578,7 +1575,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}_{Lasso} = \sum_{n=1}^{
 <li><p>Some features are ignored entirely: automatic feature selection</p></li>
 <li><p>How can we explain this?</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Lasso</span>
 
@@ -1598,10 +1595,10 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}_{Lasso} = \sum_{n=1}^{
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "06c4e5bd6aa64f28bb822820f3381442", "version_major": 2, "version_minor": 0}
+{"model_id": "7938e162f6984f06b8c7397208631115", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.00001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]:</span>
@@ -1653,7 +1650,7 @@ $<span class="math notranslate nohighlight">\(w_i^* = S(\rho_i,\alpha) = \begin{
 </li>
 <li><p>Ridge solution: <span class="math notranslate nohighlight">\(w_i = \rho_i - \alpha \cdot \partial_{w_i} w_i^2 = \rho_i - 2\alpha \cdot w_i\)</span>, thus <span class="math notranslate nohighlight">\(w_i^* = \frac{\rho_i}{1 + 2\alpha}\)</span></p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@interact</span>
 <span class="k">def</span> <span class="nf">plot_rho</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)):</span>
@@ -1673,10 +1670,10 @@ $<span class="math notranslate nohighlight">\(w_i^* = S(\rho_i,\alpha) = \begin{
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "328c64490c0b4a7493056ddf2c82b9ce", "version_major": 2, "version_minor": 0}
+{"model_id": "4d46a746d9a24a3abc016be83f6e48e2", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="n">plot_rho</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1696,7 +1693,7 @@ $<span class="math notranslate nohighlight">\(w_i^* = S(\rho_i,\alpha) = \begin{
 <li><p>Lasso is not differentiable at point 0</p></li>
 <li><p>For any minimum of least squares, L2 will be smaller, and L1 is more likely be 0</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">c_fx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">fX</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Some convex function to represent the loss</span>
@@ -1740,10 +1737,10 @@ $<span class="math notranslate nohighlight">\(w_i^* = S(\rho_i,\alpha) = \begin{
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "24c965aec44a43e0a605c34b8737edb8", "version_major": 2, "version_minor": 0}
+{"model_id": "a24e4de4029849559835ac5c71615de9", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="n">plot_losses</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
@@ -1765,7 +1762,7 @@ $<span class="math notranslate nohighlight">\(w_i^* = S(\rho_i,\alpha) = \begin{
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_loss_interpretation</span><span class="p">():</span>
     <span class="n">line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1001</span><span class="p">)</span>
@@ -1865,7 +1862,7 @@ $<span class="math notranslate nohighlight">\(w_i^* = S(\rho_i,\alpha) = \begin{
 For binary classification (2 classes), we aim to fit the following function:</p>
 <p><span class="math notranslate nohighlight">\(\hat{y} = w_1 * x_1 + w_2 * x_2 +... + w_p * x_p + w_0 &gt; 0\)</span></p>
 <p>When <span class="math notranslate nohighlight">\(\hat{y}&lt;0\)</span>, predict class -1, otherwise predict class +1</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
@@ -1927,7 +1924,7 @@ $<span class="math notranslate nohighlight">\( \hat{y} = \textrm{logistic}(f_{\t
 </li>
 <li><p>E.g. in 1D: <span class="math notranslate nohighlight">\( \textrm{logistic}(x_1w_1+w_0) = \frac{1}{1+e^{-x_1w_1-w_0}} \)</span></p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">w1</span><span class="p">,</span><span class="n">w0</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">w1</span><span class="o">+</span><span class="n">w0</span><span class="p">)))</span>
@@ -1952,10 +1949,10 @@ $<span class="math notranslate nohighlight">\( \hat{y} = \textrm{logistic}(f_{\t
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "9c6d3e55f76e461ab16fd79aeb4044b5", "version_major": 2, "version_minor": 0}
+{"model_id": "2c11e1a24ec34b75978036ef06999c42", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="c1"># fitted solution</span>
@@ -1974,7 +1971,7 @@ $<span class="math notranslate nohighlight">\( \hat{y} = \textrm{logistic}(f_{\t
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lr_clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xf</span><span class="p">,</span> <span class="n">yf</span><span class="p">)</span>
 
@@ -2021,10 +2018,10 @@ $<span class="math notranslate nohighlight">\( \hat{y} = \textrm{logistic}(f_{\t
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "50b44f4c60f54d619ac1690622761349", "version_major": 2, "version_minor": 0}
+{"model_id": "a5d439d7671a41b092cf18ae9a136e14", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="n">plot_logistic_fit</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span>
@@ -2049,7 +2046,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L_{log}}(\mathbf{w}) = \s
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cross_entropy</span><span class="p">(</span><span class="n">yHat</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -2128,7 +2125,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L_{log}}(\mathbf{w}) = \s
 <span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 
@@ -2151,10 +2148,10 @@ $<span class="math notranslate nohighlight">\(\mathcal{L_{log}}(\mathbf{w}) = \s
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "28e9ae1cf67f4da5b6f8c31d83314ce5", "version_major": 2, "version_minor": 0}
+{"model_id": "ff7e94f643ea45dc9eabe2fd49702fea", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="n">plot_lr</span><span class="p">(</span><span class="n">C_log</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
@@ -2170,7 +2167,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L_{log}}(\mathbf{w}) = \s
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_breast_cancer</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span>
@@ -2204,7 +2201,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L_{log}}(\mathbf{w}) = \s
 <li><p>Again, choose between L1 or L2 regularization (or elastic-net)</p></li>
 <li><p>Small C overfits, L1 leads to sparse models</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_C_train</span><span class="p">,</span> <span class="n">X_C_test</span><span class="p">,</span> <span class="n">y_C_train</span><span class="p">,</span> <span class="n">y_C_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_C</span><span class="p">,</span> <span class="n">y_C</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
@@ -2225,10 +2222,10 @@ $<span class="math notranslate nohighlight">\(\mathcal{L_{log}}(\mathbf{w}) = \s
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8db046ad23c247d9b3f12b69867005de", "version_major": 2, "version_minor": 0}
+{"model_id": "a3394646b42543e18c03f372dd88e3a8", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="n">plot_logreg</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="s1">&#39;l2&#39;</span><span class="p">)</span>
@@ -2283,7 +2280,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}_{Ridge} = \sum_{n=1}^{
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 
@@ -2339,10 +2336,10 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}_{Ridge} = \sum_{n=1}^{
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "2d2f86432cbc4d8e8143e42cac040962", "version_major": 2, "version_minor": 0}
+{"model_id": "a9f9527d9c094913951b3ea843e1aa48", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">interactive</span><span class="p">:</span>
     <span class="n">plot_svc_fit</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">135</span><span class="p">)</span>
@@ -2401,7 +2398,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}_{Ridge} = \sum_{n=1}^{
 <li><p>Can be solved with quadratic programming, e.g. Sequential Minimal Optimization (SMO)</p></li>
 </ul>
 <p>Example result. The circled samples are support vectors, together with their coefficients.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 
@@ -2498,7 +2495,7 @@ $<span class="math notranslate nohighlight">\(\xi_{i} =  max(0,1-y_i\cdot(\mathb
 $<span class="math notranslate nohighlight">\(\mathcal{L}(\mathbf{w}) = ||\mathbf{w}||^2 + C \sum_i^n \xi_{i}\)</span>$</p></li>
 <li><p>Can still be solved with quadratic programming</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hinge_loss</span><span class="p">(</span><span class="n">yHat</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -2536,7 +2533,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}(\mathbf{w}) = ||\mathb
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">fig_scale</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">fig_scale</span><span class="p">))</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
@@ -2567,7 +2564,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}(\mathbf{w}) = ||\mathb
 </li>
 <li><p>Needs to be tuned carefully to the data</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">svm_axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="o">*</span><span class="n">fig_scale</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">fig_scale</span><span class="p">))</span>
 <span class="n">plot_linear_svm</span><span class="p">(</span><span class="n">svm_X</span><span class="p">,</span><span class="n">svm_Y</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">svm_axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -2580,7 +2577,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}(\mathbf{w}) = ||\mathb
 </div>
 </div>
 <p>Same for non-linearly separable data</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svm_X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">svm_axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="o">*</span><span class="n">fig_scale</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">fig_scale</span><span class="p">))</span>
@@ -2594,7 +2591,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}(\mathbf{w}) = ||\mathb
 </div>
 </div>
 <p>Large C values can lead to overfitting (e.g. fitting noise), small values can lead to underfitting</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mglearn</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plot_linear_svc_regularization</span><span class="p">()</span>
 </pre></div>
@@ -2628,7 +2625,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}(\mathbf{w}) = ||\mathb
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">dual_coef_</span><span class="p">[:])</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
 
@@ -2675,7 +2672,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L_{Hinge}}(\mathbf{w}) = 
 \)</span><span class="math notranslate nohighlight">\(\frac{\partial \mathcal{L_{Hinge}}}{\partial w_i} =  \begin{cases}-y_i x_i &amp; y_i (\mathbf{w}\mathbf{x_i} + w_0) &lt; 1\\ 0 &amp; \text{otherwise} \\ \end{cases}\)</span>$</p></li>
 <li><p>Can be solved with (stochastic) gradient descent</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">fig_scale</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">fig_scale</span><span class="p">))</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
@@ -2710,7 +2707,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L_{Hinge}}(\mathbf{w}) = 
 <li><p>Log loss can also be used (equivalent to logistic regression)</p></li>
 <li><p>In sklearn, <code class="docutils literal notranslate"><span class="pre">SGDClassifier</span></code> can be used with any of these. Good for large datasets.</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">modified_huber_loss</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">y_pred</span> <span class="o">*</span> <span class="n">y_true</span>
@@ -2775,7 +2772,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}_{Perceptron} = max(0,-
 <li><p>Learn a binary model for each class vs. all other classes</p></li>
 <li><p>Create as many binary models as there are classes</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
 
@@ -2804,7 +2801,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}_{Perceptron} = max(0,-
 <ul class="simple">
 <li><p>Every binary classifiers makes a prediction, the one with the highest score (&gt;0) wins</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mglearn</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plot_2d_classification</span><span class="p">(</span><span class="n">linear_svm</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.7</span><span class="p">)</span>
 <span class="n">mglearn</span><span class="o">.</span><span class="n">discrete_scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">)</span>
@@ -2845,7 +2842,7 @@ $<span class="math notranslate nohighlight">\(\mathcal{L}_{Perceptron} = max(0,-
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%HTML</span>
 <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
@@ -3038,7 +3035,7 @@ th {font-size: 16px}
     
       By Joaquin Vanschoren<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2021. CC0 Licensed - Use as you like.<br/>
   </p>
 </footer>
 </main>
