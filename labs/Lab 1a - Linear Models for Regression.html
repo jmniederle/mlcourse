@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 1: Linear models &#8212; ML Engineering</title>
+    <title>Lab 1a: Linear regression &#8212; ML Engineering</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -56,6 +54,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 1b: Linear classification" href="Lab%201b%20-%20Linear%20Models%20for%20Classification.html" />
+    <link rel="prev" title="Prerequisites" href="Lab%200%20-%20Prerequisites.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,10 +95,15 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Overview
+   Welcome
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/01%20-%20Introduction.html">
@@ -118,6 +123,78 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/04%20-%20Model%20Selection.html">
    Lecture 4: Model Selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05%20-%20Ensemble%20Learning.html">
+   Lecture 5. Ensemble Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%200%20-%20Prerequisites.html">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 1a: Linear regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%201b%20-%20Linear%20Models%20for%20Classification.html">
+   Lab 1b: Linear classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%202%20-%20Kernelization.html">
+   Lab 2: Kernelization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%203a%20-%20Model%20Selection.html">
+   Lab 3a: Model selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%203b%20-%20Ensembles.html">
+   Lab 3b: Ensembles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%204%20-%20Pipelines.html">
+   Lab 4:  Data preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%205%20-%20Bayesian%20learning.html">
+   Lab 5: Bayesian models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%206%20-%20Neural%20Networks.html">
+   Lab 6: Neural networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%207a%20-%20Convolutional%20Neural%20Networks.html">
+   Lab 7a: Convolutional neural nets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%207b%20-%20Neural%20Networks%20for%20text.html">
+   Lab 7b: Neural Networks for text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%208%20-%20AutoML.html">
+   Lab 8: AutoML
   </a>
  </li>
 </ul>
@@ -226,11 +303,6 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-regression">
-   Part 1: Regression
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quick-visualization">
    Quick visualization
   </a>
@@ -306,7 +378,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lab 1: Linear models</h1>
+                <h1>Lab 1a: Linear regression</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -316,11 +388,6 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-regression">
-   Part 1: Regression
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quick-visualization">
    Quick visualization
@@ -396,17 +463,21 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lab-1-linear-models">
-<h1>Lab 1: Linear models<a class="headerlink" href="#lab-1-linear-models" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="part-1-regression">
-<h2>Part 1: Regression<a class="headerlink" href="#part-1-regression" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-1a-linear-regression">
+<h1>Lab 1a: Linear regression<a class="headerlink" href="#lab-1a-linear-regression" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference external" href="https://www.openml.org/d/547">NO2 dataset</a> contains 500 measurement of pollution caused by cars. The goal is to predict the concentration of <span class="math notranslate nohighlight">\(NO_2\)</span> from data about traffic and atmospheric conditions. The predictive variables include the number of cars per hour, temperature, wind, and time of day.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># General imports</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">get_ipython</span><span class="p">()):</span>
+    <span class="o">!</span>pip install openml
+
+<span class="c1"># General imports</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">from</span> <span class="nn">preamble</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;savefig.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># This controls the size of your figures</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">openml</span> <span class="k">as</span> <span class="nn">oml</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
 </pre></div>
 </div>
@@ -419,7 +490,6 @@
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">no2</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">no2</span><span class="o">.</span><span class="n">default_target_attribute</span><span class="p">);</span> 
 <span class="n">attribute_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -437,7 +507,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Lab 1a - Linear Models for Regression_6_0.png" src="../_images/Lab 1a - Linear Models for Regression_6_0.png" />
+<img alt="../_images/Lab 1a - Linear Models for Regression_5_0.png" src="../_images/Lab 1a - Linear Models for Regression_5_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -477,53 +547,53 @@
   <tbody>
     <tr>
       <th>42</th>
-      <td>7.64</td>
+      <td>7.64300</td>
       <td>8.5</td>
       <td>4.3</td>
       <td>-0.2</td>
       <td>322.0</td>
       <td>13</td>
-      <td>3.22</td>
+      <td>3.22287</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>7.75</td>
+      <td>7.75061</td>
       <td>8.2</td>
       <td>4.5</td>
       <td>0.2</td>
       <td>307.0</td>
       <td>14</td>
-      <td>3.15</td>
+      <td>3.15274</td>
     </tr>
     <tr>
       <th>255</th>
-      <td>8.12</td>
+      <td>8.12415</td>
       <td>5.2</td>
       <td>2.8</td>
       <td>0.3</td>
       <td>209.0</td>
       <td>8</td>
-      <td>4.20</td>
+      <td>4.19570</td>
     </tr>
     <tr>
       <th>488</th>
-      <td>7.64</td>
+      <td>7.64108</td>
       <td>6.7</td>
       <td>2.3</td>
       <td>-0.4</td>
       <td>247.0</td>
       <td>10</td>
-      <td>3.98</td>
+      <td>3.98155</td>
     </tr>
     <tr>
       <th>94</th>
-      <td>8.32</td>
+      <td>8.31630</td>
       <td>6.3</td>
       <td>1.2</td>
       <td>1.3</td>
       <td>265.0</td>
       <td>17</td>
-      <td>4.14</td>
+      <td>4.14155</td>
     </tr>
   </tbody>
 </table>
@@ -537,7 +607,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Lab 1a - Linear Models for Regression_9_0.png" src="../_images/Lab 1a - Linear Models for Regression_9_0.png" />
+<img alt="../_images/Lab 1a - Linear Models for Regression_8_0.png" src="../_images/Lab 1a - Linear Models for Regression_8_0.png" />
 </div>
 </div>
 <p>We can see that the target (<span class="math notranslate nohighlight">\(NO_2\)</span> levels) seem to be correlated to the number of cars per hour, which makes sense because cars produce <span class="math notranslate nohighlight">\(NO_2\)</span>. Other influences (air temperature differences and wind) seem to have a more complex and subtle effect. Let’s try to model these using linear regression models.</p>
@@ -578,8 +648,10 @@
 Store the return values in the variables <code class="docutils literal notranslate"><span class="pre">train_scores</span></code> and <code class="docutils literal notranslate"><span class="pre">test_scores</span></code>. Then, run the code given below to produce a plot visualizing the scores.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dummy code. Replace with the actual classifiers and scores</span>
-<span class="n">classifiers</span> <span class="o">=</span> <span class="p">[</span><span class="n">LinearRegression</span><span class="p">()]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># Dummy code. Replace with the actual classifiers and scores</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">LinearRegression</span><span class="p">()]</span>
 <span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.8</span><span class="p">]],</span> <span class="p">[[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.7</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -607,7 +679,7 @@ Store the return values in the variables <code class="docutils literal notransla
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Lab 1a - Linear Models for Regression_16_0.png" src="../_images/Lab 1a - Linear Models for Regression_16_0.png" />
+<img alt="../_images/Lab 1a - Linear Models for Regression_15_0.png" src="../_images/Lab 1a - Linear Models for Regression_15_0.png" />
 </div>
 </div>
 </div>
@@ -727,7 +799,21 @@ Store the return values in the variables <code class="docutils literal notransla
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Lab%200%20-%20Prerequisites.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Prerequisites</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Lab%201b%20-%20Linear%20Models%20for%20Classification.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 1b: Linear classification</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

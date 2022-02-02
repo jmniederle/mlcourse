@@ -120,6 +120,11 @@
    Lecture 4: Model Selection
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05%20-%20Ensemble%20Learning.html">
+   Lecture 5. Ensemble Learning
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -986,28 +991,31 @@
             
               <div>
                 
-  <div class="cell docutils container">
+  <div class="section" id="lecture-6-data-preprocessing">
+<h1>Lecture 6. Data preprocessing<a class="headerlink" href="#lecture-6-data-preprocessing" title="Permalink to this headline">¶</a></h1>
+<p><strong>Real-world machine learning pipelines</strong></p>
+<p>Joaquin Vanschoren</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Global imports and settings</span>
-<span class="kn">from</span> <span class="nn">preamble</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">get_ipython</span><span class="p">())</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;/content/master&#39;</span><span class="p">):</span>
+    <span class="o">!</span>git clone -q https://github.com/ML-course/master.git /content/master
+    <span class="o">!</span>pip install -rq master/requirements_colab.txt
+    <span class="o">%</span><span class="k">cd</span> master/notebooks
+
+<span class="c1"># Global imports and settings</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="c1">#InteractiveShell.ast_node_interactivity = &quot;all&quot;</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;style&gt;html, body{overflow-y: visible !important} .CodeMirror{min-width:105% !important;} .rise-enabled .CodeMirror, .rise-enabled .output_subarea{font-size:140%; line-height:1.2; overflow: visible;} .output_subarea pre</span><span class="si">{width:110%}</span><span class="s1">&lt;/style&gt;&#39;&#39;&#39;</span><span class="p">)</span> <span class="c1"># For slides</span>
-<span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># Set to True for interactive plots </span>
+<span class="kn">from</span> <span class="nn">preamble</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># Set to True for interactive plots</span>
 <span class="k">if</span> <span class="n">interactive</span><span class="p">:</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">150</span>
-    <span class="n">table_font_size</span> <span class="o">=</span> <span class="s1">&#39;30px&#39;</span>
+    <span class="n">fig_scale</span> <span class="o">=</span> <span class="mf">1.5</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
-    <span class="n">table_font_size</span> <span class="o">=</span> <span class="s1">&#39;20px&#39;</span>
+    <span class="n">fig_scale</span> <span class="o">=</span> <span class="mf">1.25</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="lecture-6-data-preprocessing">
-<h1>Lecture 6. Data preprocessing<a class="headerlink" href="#lecture-6-data-preprocessing" title="Permalink to this headline">¶</a></h1>
-<p><strong>Real-world machine learning pipelines</strong></p>
-<p>Joaquin Vanschoren</p>
 </div>
 <div class="section" id="data-transformations">
 <h1>Data transformations<a class="headerlink" href="#data-transformations" title="Permalink to this headline">¶</a></h1>

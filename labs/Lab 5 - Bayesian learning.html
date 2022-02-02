@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -54,6 +52,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 6: Neural networks" href="Lab%206%20-%20Neural%20Networks.html" />
+    <link rel="prev" title="Lab 4: Data preprocessing" href="Lab%204%20-%20Pipelines.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -93,10 +93,15 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Overview
+   Welcome
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/01%20-%20Introduction.html">
@@ -116,6 +121,78 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/04%20-%20Model%20Selection.html">
    Lecture 4: Model Selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05%20-%20Ensemble%20Learning.html">
+   Lecture 5. Ensemble Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%200%20-%20Prerequisites.html">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%201a%20-%20Linear%20Models%20for%20Regression.html">
+   Lab 1a: Linear regression models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%201b%20-%20Linear%20Models%20for%20Classification.html">
+   Lab 1a: Linear classification models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%202%20-%20Kernelization.html">
+   Lab 2: Kernelization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%203a%20-%20Model%20Selection.html">
+   Lab 3a: Model selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%203b%20-%20Ensembles.html">
+   Lab 3b: Ensembles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%204%20-%20Pipelines.html">
+   Lab 4:  Data preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 5: Bayesian models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%206%20-%20Neural%20Networks.html">
+   Lab 6: Neural networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%207a%20-%20Convolutional%20Neural%20Networks.html">
+   Lab 7a: Convolutional neural networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%207b%20-%20Neural%20Networks%20for%20text.html">
+   Lab 7b: Neural Networks for text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%208%20-%20AutoML.html">
+   Lab 8: AutoML
   </a>
  </li>
 </ul>
@@ -223,32 +300,27 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Lab 5: Bayesian models
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-1-visualizing-predictions">
    Exercise 1: visualizing predictions
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-2-reducing-the-uncertainty">
    Exercise 2: reducing the uncertainty
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-3-kernels">
    Exercise 3: Kernels
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-4-mauna-loa-data">
    Exercise 4: Mauna Loa data
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-4-1">
    Exercise 4.1
   </a>
@@ -273,32 +345,27 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Lab 5: Bayesian models
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-1-visualizing-predictions">
    Exercise 1: visualizing predictions
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-2-reducing-the-uncertainty">
    Exercise 2: reducing the uncertainty
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-3-kernels">
    Exercise 3: Kernels
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-4-mauna-loa-data">
    Exercise 4: Mauna Loa data
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-4-1">
    Exercise 4.1
   </a>
@@ -312,7 +379,7 @@
             
               <div>
                 
-  <div class="section" id="lab-5-bayesian-models">
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-5-bayesian-models">
 <h1>Lab 5: Bayesian models<a class="headerlink" href="#lab-5-bayesian-models" title="Permalink to this headline">¶</a></h1>
 <p>We will first learn a GP regressor for an artificial, non-linear function to illustrate some basic aspects of GPs. To this end, we consider a sinusoidal function from which we sample a dataset.</p>
 <div class="cell docutils container">
@@ -394,17 +461,16 @@
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="exercise-1-visualizing-predictions">
-<h1>Exercise 1: visualizing predictions<a class="headerlink" href="#exercise-1-visualizing-predictions" title="Permalink to this headline">¶</a></h1>
+<h2>Exercise 1: visualizing predictions<a class="headerlink" href="#exercise-1-visualizing-predictions" title="Permalink to this headline">¶</a></h2>
 <p>Train a GP regressor with a RBF kernel with default hyperparameters on a 1% sample of the sine data. Note that by learning a GP the hyperparameters of the chosen kernel are tuned automatically. To visualize what the GP has learned, use the model to predict values for the entire dataset. Plot the original function, the predictions and the training data points. You can use the function <code class="docutils literal notranslate"><span class="pre">plot_gp()</span></code> to assist with plotting.</p>
 </div>
 <div class="section" id="exercise-2-reducing-the-uncertainty">
-<h1>Exercise 2: reducing the uncertainty<a class="headerlink" href="#exercise-2-reducing-the-uncertainty" title="Permalink to this headline">¶</a></h1>
+<h2>Exercise 2: reducing the uncertainty<a class="headerlink" href="#exercise-2-reducing-the-uncertainty" title="Permalink to this headline">¶</a></h2>
 <p>Fit a model using 5% and 10% of the data. Now try setting <code class="docutils literal notranslate"><span class="pre">n_restarts_optimizer</span></code> in the <code class="docutils literal notranslate"><span class="pre">GaussianProcessRegressor</span></code> constructor. Plot the results. What differences do you see?</p>
 </div>
 <div class="section" id="exercise-3-kernels">
-<h1>Exercise 3: Kernels<a class="headerlink" href="#exercise-3-kernels" title="Permalink to this headline">¶</a></h1>
+<h2>Exercise 3: Kernels<a class="headerlink" href="#exercise-3-kernels" title="Permalink to this headline">¶</a></h2>
 <p>Like SVMs, kernels play a major role in GPs. Using a 5% sample of the data, train one GP  with each of the following kernels:</p>
 <ul class="simple">
 <li><p>RBF</p></li>
@@ -416,7 +482,7 @@
 <p>What differences do you see in the log-likelihood? Which model fit best the training data?</p>
 </div>
 <div class="section" id="exercise-4-mauna-loa-data">
-<h1>Exercise 4: Mauna Loa data<a class="headerlink" href="#exercise-4-mauna-loa-data" title="Permalink to this headline">¶</a></h1>
+<h2>Exercise 4: Mauna Loa data<a class="headerlink" href="#exercise-4-mauna-loa-data" title="Permalink to this headline">¶</a></h2>
 <p>We now look at the problem of predicting the monthly average CO2 concentrations collected at the Mauna Loa Observatory in Hawaii, between 1958 and 2001. This is a time-series data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -467,7 +533,7 @@
 </div>
 </div>
 <div class="section" id="exercise-4-1">
-<h1>Exercise 4.1<a class="headerlink" href="#exercise-4-1" title="Permalink to this headline">¶</a></h1>
+<h2>Exercise 4.1<a class="headerlink" href="#exercise-4-1" title="Permalink to this headline">¶</a></h2>
 <p>Signals like this usually consist of a combination of different “sub-signals”, e.g. a long-term component, a seasonal component, a noise component, and so on. When defining a GP kernel, you can combine multiple kernels, such as:</p>
 <ul class="simple">
 <li><p>A RBF kernel can be used to explain long-term, smooth patterns.</p></li>
@@ -492,6 +558,7 @@
 
 <span class="n">kernel</span> <span class="o">=</span> <span class="n">k1</span> <span class="o">+</span> <span class="n">k2</span> <span class="o">+</span>  <span class="n">k3</span> <span class="o">+</span> <span class="n">k4</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -521,7 +588,21 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Lab%204%20-%20Pipelines.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab 4:  Data preprocessing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Lab%206%20-%20Neural%20Networks.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 6: Neural networks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

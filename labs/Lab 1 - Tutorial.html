@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -93,10 +91,15 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Overview
+   Welcome
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/01%20-%20Introduction.html">
@@ -116,6 +119,78 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../notebooks/04%20-%20Model%20Selection.html">
    Lecture 4: Model Selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/05%20-%20Ensemble%20Learning.html">
+   Lecture 5. Ensemble Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%200%20-%20Prerequisites.html">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%201a%20-%20Linear%20Models%20for%20Regression.html">
+   Lab 1: Linear models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%201b%20-%20Linear%20Models%20for%20Classification.html">
+   Lab 1: Linear models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%202%20-%20Kernelization.html">
+   Lab 2: Tuning Support Vector Machines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%203a%20-%20Model%20Selection.html">
+   Lab 3a: Model selection: dark matter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%203b%20-%20Ensembles.html">
+   Lab 3b: Using trees to detect trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%204%20-%20Pipelines.html">
+   Lab 4:  Data preprocessing and pipelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%205%20-%20Bayesian%20learning.html">
+   Lab 5: Bayesian models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%206%20-%20Neural%20Networks.html">
+   Lab 6: Neural networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%207a%20-%20Convolutional%20Neural%20Networks.html">
+   Lab 7a: Object recognition with convolutional neural networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%207b%20-%20Neural%20Networks%20for%20text.html">
+   Lab 7b: Neural Networks for text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%208%20-%20AutoML.html">
+   Lab 8: AutoML
   </a>
  </li>
 </ul>
@@ -404,17 +479,18 @@
             
               <div>
                 
-  <div class="cell docutils container">
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-1-machine-learning-with-python">
+<h1>Lab 1: Machine Learning with Python<a class="headerlink" href="#lab-1-machine-learning-with-python" title="Permalink to this headline">¶</a></h1>
+<p>Joaquin Vanschoren, Pieter Gijsbers, Bilge Celik, Prabhant Singh</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">preamble</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="lab-1-machine-learning-with-python">
-<h1>Lab 1: Machine Learning with Python<a class="headerlink" href="#lab-1-machine-learning-with-python" title="Permalink to this headline">¶</a></h1>
-<p>Joaquin Vanschoren, Pieter Gijsbers, Bilge Celik, Prabhant Singh</p>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -441,7 +517,7 @@
 </ul>
 </li>
 </ul>
-<img src="../images/tut_ecosystem.jpg" alt="ml" style="width: 1000px;"/></div>
+<img src="https://raw.githubusercontent.com/ML-course/master/master/notebooks/images/tut_ecosystem.jpg" alt="ml" style="width: 1000px;"/></div>
 <div class="tex2jax_ignore mathjax_ignore section" id="numpy-scipy-matplotlib">
 <h1>Numpy, Scipy, Matplotlib<a class="headerlink" href="#numpy-scipy-matplotlib" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
@@ -507,7 +583,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span><span class="p">,</span> <span class="n">fetch_openml</span>
 <span class="n">iris_data</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-<span class="n">dating_data</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="s2">&quot;SpeedDating&quot;</span><span class="p">)</span>
+<span class="n">dating_data</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="s2">&quot;SpeedDating&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -521,7 +597,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Keys of iris_dataset: dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;feature_names&#39;, &#39;filename&#39;])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Keys of iris_dataset: dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;frame&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;feature_names&#39;, &#39;filename&#39;, &#39;data_module&#39;])
 .. _iris_dataset:
 
 Iris plants dataset
@@ -669,9 +745,7 @@ kNN is included in <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
-                     metric_params=None, n_jobs=None, n_neighbors=1, p=2,
-                     weights=&#39;uniform&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(n_neighbors=1)
 </pre></div>
 </div>
 </div>
@@ -737,6 +811,18 @@ It will return the test scores, as well as the fit and score times, for every fo
 By default, scikit-learn does a 5-fold cross-validation, hence returning 5 test scores.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install -U joblib
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: joblib in /Users/jvanscho/miniforge3/lib/python3.9/site-packages (1.1.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span>
 <span class="n">xval</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">knn</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">xval</span>
@@ -744,9 +830,9 @@ By default, scikit-learn does a 5-fold cross-validation, hence returning 5 test 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.001, 0.001, 0.001, 0.001, 0.001]),
- &#39;score_time&#39;: array([0.002, 0.002, 0.002, 0.002, 0.002]),
- &#39;test_score&#39;: array([0.967, 0.967, 0.933, 0.933, 1.   ]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.00044179, 0.00046229, 0.00036192, 0.00044894, 0.00045228]),
+ &#39;score_time&#39;: array([0.00082421, 0.0007906 , 0.00073504, 0.00083709, 0.00080681]),
+ &#39;test_score&#39;: array([0.96666667, 0.96666667, 0.93333333, 0.93333333, 1.        ]),
  &#39;train_score&#39;: array([1., 1., 1., 1., 1.])}
 </pre></div>
 </div>
@@ -778,7 +864,7 @@ By default, scikit-learn does a 5-fold cross-validation, hence returning 5 test 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.153, -0.025,  0.267,  0.574])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.15330146, -0.02540761,  0.26698013,  0.57386186])
 </pre></div>
 </div>
 </div>
@@ -792,10 +878,10 @@ By default, scikit-learn does a 5-fold cross-validation, hence returning 5 test 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{(&#39;petal length (cm)&#39;, 0.2669801292888398),
- (&#39;petal width (cm)&#39;, 0.5738618608875328),
- (&#39;sepal length (cm)&#39;, -0.15330145645467907),
- (&#39;sepal width (cm)&#39;, -0.02540761074550385)}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{(&#39;petal length (cm)&#39;, 0.2669801292888399),
+ (&#39;petal width (cm)&#39;, 0.5738618608875331),
+ (&#39;sepal length (cm)&#39;, -0.1533014564546793),
+ (&#39;sepal width (cm)&#39;, -0.025407610745503628)}
 </pre></div>
 </div>
 </div>
