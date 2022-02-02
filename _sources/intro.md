@@ -1,10 +1,10 @@
 # Welcome
+This machine learning course is created with Jupyter notebooks that allow you to interact with all the machine learning concepts
+and algorithms to understand them better. At the same time, you'll learn how to control these algorithms and use them in practice.
+
 ```{margin} Get your hands dirty
 Retrieve all materials by cloning the <i class="fab fa-github"></i> [GitHub repo](https://ml-course.github.io/master). To run the notebooks locally, see the [prerequisites](https://ml-course.github.io/master/labs/Lab%200%20-%20Prerequisites.html).
 ```
-
-This machine learning course is created with Jupyter notebooks that allow you to interact with all the machine learning concepts
-and algorithms to understand them better. At the same time, you'll learn how to control these algorithms and use them in practice.
 
 ## Lectures
 Lectures can be viewed online as notebooks, as slides (online or PDF), or as videos (hosted on YouTube). They all have the same contents.
