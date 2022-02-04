@@ -54,6 +54,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python for scientific computing" href="Tutorial%202%20-%20Python%20for%20Data%20Analysis.html" />
+    <link rel="prev" title="Lab 8: AutoML" href="../labs/Lab%208%20-%20AutoML.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -93,10 +95,22 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Overview
+   Welcome
   </a>
  </li>
 </ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%200%20-%20Prerequisites.html">
+   Prerequisites
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01%20-%20Introduction.html">
@@ -121,6 +135,125 @@
  <li class="toctree-l1">
   <a class="reference internal" href="05%20-%20Ensemble%20Learning.html">
    Lecture 5. Ensemble Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%201a%20-%20Linear%20Models%20for%20Regression.html">
+   Lab 1a: Linear regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%201b%20-%20Linear%20Models%20for%20Classification.html">
+   Lab 1b: Linear classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%202%20-%20Kernelization.html">
+   Lab 2: Kernelization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%203a%20-%20Model%20Selection.html">
+   Lab 3a: Model selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%203b%20-%20Ensembles.html">
+   Lab 3b: Ensembles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%204%20-%20Pipelines.html">
+   Lab 4:  Data preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%205%20-%20Bayesian%20learning.html">
+   Lab 5: Bayesian models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%206%20-%20Neural%20Networks.html">
+   Lab 6: Neural networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%207a%20-%20Convolutional%20Neural%20Networks.html">
+   Lab 7a: Convolutional neural nets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%207b%20-%20Neural%20Networks%20for%20text.html">
+   Lab 7b: Neural Networks for text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%208%20-%20AutoML.html">
+   Lab 8: AutoML
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Python for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%202%20-%20Python%20for%20Data%20Analysis.html">
+   Python for scientific computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%203%20-%20Machine%20Learning%20in%20Python.html">
+   Machine Learning in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%204%20-%20Decision%20Trees.html">
+   Recap: Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial%205%20-%20Nearest%20Neighbors.html">
+   Recap: k-Nearest Neighbor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%201%20-%20Tutorial.html">
+   Lab 1: Machine Learning with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%203%20-%20Tutorial.html">
+   Lab 3 Tutorial: Model Selection in scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%204%20-%20Tutorial.html">
+   Lab 4 Tutorial: Data engineering pipelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%206%20-%20Tutorial.html">
+   Lab 6 Tutorial: Deep Learning with TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/Lab%207%20-%20Tutorial.html">
+   Lab 7 Tutorial: Deep Learning for text
   </a>
  </li>
 </ul>
@@ -351,17 +484,7 @@
             
               <div>
                 
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;style&gt;html, body{overflow-y: visible !important} .CodeMirror{min-width:105% !important;} .rise-enabled .CodeMirror, .rise-enabled .output_subarea{font-size:140%; line-height:1.2; overflow: visible;} .output_subarea pre</span><span class="si">{width:110%}</span><span class="s1">&lt;/style&gt;&#39;&#39;&#39;</span><span class="p">)</span> <span class="c1"># For slides</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>html, body{overflow-y: visible !important} .CodeMirror{min-width:105% !important;} .rise-enabled .CodeMirror, .rise-enabled .output_subarea{font-size:140%; line-height:1.2; overflow: visible;} .output_subarea pre{width:110%}</style></div></div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="python-for-data-analysis">
+  <div class="tex2jax_ignore mathjax_ignore section" id="python-for-data-analysis">
 <h1>Python for data analysis<a class="headerlink" href="#python-for-data-analysis" title="Permalink to this headline">¶</a></h1>
 <p>For those who are new to using Python for scientific work, we first provide a short introduction to Python and the most useful packages for data analysis.</p>
 <div class="section" id="python">
@@ -455,7 +578,7 @@ Exception: Arithmetic operations will convert to the <em>most general</em> type.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2: &#39;a&#39;, 3: &#39;b&#39;, &#39;bar&#39;: &#39;d&#39;, &#39;foo&#39;: &#39;c&#39;}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2: &#39;a&#39;, 3: &#39;b&#39;, &#39;foo&#39;: &#39;c&#39;, &#39;bar&#39;: &#39;d&#39;}
 </pre></div>
 </div>
 </div>
@@ -485,19 +608,12 @@ Exception: Arithmetic operations will convert to the <em>most general</em> type.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span>
 <span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># Lists are mutable</span>
 <span class="n">l</span>
-<span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># Tuples are not</span>
+<span class="c1"># t[2] = 7 # Tuples are not -&gt; TypeError</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">----------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-8-8a2d4c30ca67&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># Lists are mutable</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">l</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># Tuples are not</span>
-
-<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 7, 4, 5, 6]
 </pre></div>
 </div>
 </div>
@@ -510,6 +626,11 @@ Exception: Arithmetic operations will convert to the <em>most general</em> type.
 <span class="n">name</span>
 <span class="n">age</span>
 <span class="n">studies</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;CS&#39;
 </pre></div>
 </div>
 </div>
@@ -530,6 +651,11 @@ They can be formatted with the format operator (%), e.g. %s for strings, %d for 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.14&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>They also have a format() function for <a class="reference external" href="https://pyformat.info/">more complex formatting</a></p>
 <div class="cell docutils container">
@@ -539,6 +665,11 @@ They can be formatted with the format operator (%), e.g. %s for strings, %d for 
 <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">l</span>       <span class="c1"># This is identical</span>
 <span class="s2">&quot;</span><span class="si">{first}</span><span class="s2"> </span><span class="si">{last}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="s1">&#39;Hodor&#39;</span><span class="p">,</span> 
                            <span class="s1">&#39;last&#39;</span><span class="p">:</span> <span class="s1">&#39;Hodor!&#39;</span><span class="p">})</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hodor Hodor!&#39;
 </pre></div>
 </div>
 </div>
@@ -566,6 +697,16 @@ Indentation defines the scope, not brackets.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+foo : c
+bar : d
+Short list
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="functions">
@@ -577,6 +718,11 @@ Indentation defines the scope, not brackets.</p>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 <span class="n">myfunc</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -600,6 +746,14 @@ Indentation defines the scope, not brackets.</p>
 
 <span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">func</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>func argv: (2, 3)
+func kwarg: {&#39;a&#39;: 4, &#39;b&#39;: 5}
+9
+4
 </pre></div>
 </div>
 </div>
@@ -628,6 +782,14 @@ Indentation defines the scope, not brackets.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+4
+9
+</pre></div>
+</div>
+</div>
 </div>
 <p>Functions can be passed as arguments to other functions</p>
 <div class="cell docutils container">
@@ -643,6 +805,11 @@ Indentation defines the scope, not brackets.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello John&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Functions can return other functions</p>
 <div class="cell docutils container">
@@ -655,6 +822,11 @@ Indentation defines the scope, not brackets.</p>
 
 <span class="n">greet</span> <span class="o">=</span> <span class="n">compose_greet_func</span><span class="p">()</span>
 <span class="n">greet</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello there!&#39;
 </pre></div>
 </div>
 </div>
@@ -680,6 +852,11 @@ Indentation defines the scope, not brackets.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The new answer is 42&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Static functions need the &#64;staticmethod decorator</p>
 <div class="cell docutils container">
@@ -700,6 +877,11 @@ Indentation defines the scope, not brackets.</p>
 <span class="n">a</span> <span class="o">=</span> <span class="n">TestClass</span><span class="p">(</span><span class="s2">&quot;The new answer is &quot;</span><span class="p">)</span>
 <span class="n">a</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">a</span><span class="o">.</span><span class="n">sayStatic</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The answer is 42&#39;
 </pre></div>
 </div>
 </div>
@@ -848,7 +1030,21 @@ Indentation defines the scope, not brackets.</p>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../labs/Lab%208%20-%20AutoML.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab 8: AutoML</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Tutorial%202%20-%20Python%20for%20Data%20Analysis.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python for scientific computing</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

@@ -42,6 +42,8 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -197,6 +199,63 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/Tutorial%201%20-%20Python.html">
+   Python for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/Tutorial%202%20-%20Python%20for%20Data%20Analysis.html">
+   Python for scientific computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/Tutorial%203%20-%20Machine%20Learning%20in%20Python.html">
+   Machine Learning in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/Tutorial%204%20-%20Decision%20Trees.html">
+   Recap: Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/Tutorial%205%20-%20Nearest%20Neighbors.html">
+   Recap: k-Nearest Neighbor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="labs/Lab%201%20-%20Tutorial.html">
+   Lab 1: Machine Learning with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="labs/Lab%203%20-%20Tutorial.html">
+   Lab 3 Tutorial: Model Selection in scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="labs/Lab%204%20-%20Tutorial.html">
+   Lab 4 Tutorial: Data engineering pipelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="labs/Lab%206%20-%20Tutorial.html">
+   Lab 6 Tutorial: Deep Learning with TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="labs/Lab%207%20-%20Tutorial.html">
+   Lab 7 Tutorial: Deep Learning for text
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -290,9 +349,21 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tutorials">
-   Tutorials
+  <a class="reference internal nav-link" href="#background-materials">
+   Background materials
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorials">
+     Tutorials
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-resources">
+     Recommended resources
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -325,9 +396,21 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tutorials">
-   Tutorials
+  <a class="reference internal nav-link" href="#background-materials">
+   Background materials
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorials">
+     Tutorials
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommended-resources">
+     Recommended resources
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -342,13 +425,9 @@
 <h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
 <p>This machine learning course is created with Jupyter notebooks that allow you to interact with all the machine learning concepts
 and algorithms to understand them better. At the same time, you’ll learn how to control these algorithms and use them in practice.</p>
-<div class="admonition-get-your-hands-dirty admonition">
-<p class="admonition-title">Get your hands dirty</p>
-<p>Retrieve all materials by cloning the <i class="fab fa-github"></i> <a class="reference external" href="https://ml-course.github.io/master">GitHub repo</a>. To run the notebooks locally, see the <a class="reference external" href="https://ml-course.github.io/master/labs/Lab%200%20-%20Prerequisites.html">prerequisites</a>.</p>
-</div>
 <div class="section" id="lectures">
 <h2>Lectures<a class="headerlink" href="#lectures" title="Permalink to this headline">¶</a></h2>
-<p>Lectures can be viewed online as notebooks, as slides (online or PDF), or as videos (hosted on YouTube). They all have the same contents.
+<p>Lectures can be viewed online as notebooks, as slides (online or PDF), or as videos (hosted on YouTube). They all have the same content.
 Upon opening the notebooks, you can <i class="fas fa-rocket"></i> launch them in Google Colab (or Binder), or run them locally.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -394,9 +473,29 @@ Upon opening the notebooks, you can <i class="fas fa-rocket"></i> launch them in
 <td><p><a class="reference external" href="https://ml-course.github.io/master/07%20-%20Bayesian%20Learning.slides.html">HTML</a>  - <a class="reference external" href="https://ml-course.github.io/master/07%20-%20Bayesian%20Learning.pdf">PDF</a></p></td>
 <td><p><a class="reference external" href="https://www.youtube.com/watch?v=uhHNU8meMSA&amp;list=PLl4kuMJ32K2r2CUKkZSVVxDnjB4NM335-">Youtube</a></p></td>
 </tr>
+<tr class="row-odd"><td class="text-align:left"><p>8</p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://ml-course.github.io/master/notebooks/08%20-%20Neural%20Networks.html">Neural Networks</a><sup>2</sup></p></td>
+<td><p><a class="reference external" href="https://ml-course.github.io/master/08%20-%20Neural%20Networks.slides.html">HTML</a>  - <a class="reference external" href="https://ml-course.github.io/master/08%20-%20Neural%20Networks.pdf">PDF</a></p></td>
+<td><p><a class="reference external" href="https://www.youtube.com/watch?v=CgAMLWZE-yU&amp;list=PLl4kuMJ32K2r2CUKkZSVVxDnjB4NM335-">Youtube</a></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>9</p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://ml-course.github.io/master/notebooks/09%20-%20Convolutional%20Neural%20Networks.html">Convolutional Neural Networks</a><sup>2</sup></p></td>
+<td><p><a class="reference external" href="https://ml-course.github.io/master/09%20-%20Convolutional%20Neural%20Networks.slides.html">HTML</a>  - <a class="reference external" href="https://ml-course.github.io/master/09%20-%20Convolutional%20Neural%20Networks.pdf">PDF</a></p></td>
+<td><p><a class="reference external" href="https://www.youtube.com/watch?v=D-7JgAUlxb4&amp;list=PLl4kuMJ32K2r2CUKkZSVVxDnjB4NM335-">Youtube</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>10</p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://ml-course.github.io/master/notebooks/010%20-%20Neural%20Networks%20for%20text.html">Neural Networks for text</a><sup>2</sup></p></td>
+<td><p><a class="reference external" href="https://ml-course.github.io/master/08%20-%20Neural%20Networks%20for%20text.slides.html">HTML</a>  - <a class="reference external" href="https://ml-course.github.io/master/08%20-%20Neural%20Networks%20for%20text.pdf">PDF</a></p></td>
+<td><p><a class="reference external" href="https://www.youtube.com/watch?v=THbqTlVNIPg&amp;list=PLl4kuMJ32K2r2CUKkZSVVxDnjB4NM335-">Youtube</a></p></td>
+</tr>
 </tbody>
 </table>
-<p><sup>1</sup> The order of the slides in the video is slightly different.</p>
+<p><sup>1</sup> The order of the slides in the video is slightly different.<br />
+<sup>2</sup> Slides in preparation.</p>
+<div class="admonition-get-your-hands-dirty admonition">
+<p class="admonition-title">Get your hands dirty</p>
+<p>Retrieve all materials by cloning the <i class="fab fa-github"></i> <a class="reference external" href="https://ml-course.github.io/master">GitHub repo</a>. To run the notebooks locally, see the <a class="reference external" href="https://ml-course.github.io/master/labs/Lab%200%20-%20Prerequisites.html">prerequisites</a>.</p>
+</div>
 </div>
 <div class="section" id="labs">
 <h2>Labs<a class="headerlink" href="#labs" title="Permalink to this headline">¶</a></h2>
@@ -453,8 +552,31 @@ Upon opening the notebooks, you can <i class="fas fa-rocket"></i> launch them in
 </tbody>
 </table>
 </div>
+<div class="section" id="background-materials">
+<h2>Background materials<a class="headerlink" href="#background-materials" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="tutorials">
-<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<h3>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h3>
+<p>General introductions into using Python for scientific programming and machine learning, as well as some basic machine learning techniques. Useful for novices to cover any knowledge gaps, while more advanced students can likely skip them.</p>
+<ol class="simple">
+<li><p>[Python basics](<a class="reference external" href="https://ml-course.github.io/master/notebooks/Tutorial%201%20-%20Python">https://ml-course.github.io/master/notebooks/Tutorial 1 - Python</a></p></li>
+<li><p>[Python for data analysis](<a class="reference external" href="https://ml-course.github.io/master/notebooks/Tutorial%202%20-%20Python%20for%20Data%20Analysis">https://ml-course.github.io/master/notebooks/Tutorial 2 - Python for Data Analysis</a></p></li>
+<li><p>[Machine learning in Python](<a class="reference external" href="https://ml-course.github.io/master/notebooks/Tutorial%203%20-%20Machine%20Learning%20in%20Python">https://ml-course.github.io/master/notebooks/Tutorial 3 - Machine Learning in Python</a></p></li>
+<li><p>[Recap: Decision trees](<a class="reference external" href="https://ml-course.github.io/master/notebooks/Tutorial%204%20-%20Decision%20Trees">https://ml-course.github.io/master/notebooks/Tutorial 4 - Decision Trees</a></p></li>
+<li><p>[Recap: Nearest Neighbors](<a class="reference external" href="https://ml-course.github.io/master/notebooks/Tutorial%205%20-%20Nearest%20Neighbors">https://ml-course.github.io/master/notebooks/Tutorial 5 - Nearest Neighbors</a></p></li>
+</ol>
+</div>
+<div class="section" id="recommended-resources">
+<h3>Recommended resources<a class="headerlink" href="#recommended-resources" title="Permalink to this headline">¶</a></h3>
+<p>These resources help to further deepen your skills, and are well aligned with this course.</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://github.com/jrjohansson/scientific-python-lectures">Scientific Python Lectures (by J.R. Johansson)</a></p></li>
+<li><p><a class="reference external" href="https://mml-book.github.io/book/mml-book.pdf">Mathematics for Machine Learning (by M.P. Deisenroth et al.)</a></p></li>
+<li><p><a class="reference external" href="https://course.fast.ai/">fast.ai online course on practical deep learning</a></p></li>
+<li><p><a class="reference external" href="https://developers.google.com/machine-learning/crash-course/ml-intro">Google Machine Learning crash course</a></p></li>
+</ol>
+</div>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>

@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -52,6 +54,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 3 Tutorial: Model Selection in scikit-learn" href="Lab%203%20-%20Tutorial.html" />
+    <link rel="prev" title="Recap: k-Nearest Neighbor" href="../notebooks/Tutorial%205%20-%20Nearest%20Neighbors.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,6 +99,13 @@
   </a>
  </li>
 </ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%200%20-%20Prerequisites.html">
+   Prerequisites
+  </a>
+ </li>
+</ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Lectures
@@ -134,38 +145,33 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Lab%200%20-%20Prerequisites.html">
-   Prerequisites
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Lab%201a%20-%20Linear%20Models%20for%20Regression.html">
-   Lab 1: Linear models
+   Lab 1a: Linear regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%201b%20-%20Linear%20Models%20for%20Classification.html">
-   Lab 1: Linear models
+   Lab 1b: Linear classification
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%202%20-%20Kernelization.html">
-   Lab 2: Tuning Support Vector Machines
+   Lab 2: Kernelization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%203a%20-%20Model%20Selection.html">
-   Lab 3a: Model selection: dark matter
+   Lab 3a: Model selection
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%203b%20-%20Ensembles.html">
-   Lab 3b: Using trees to detect trees
+   Lab 3b: Ensembles
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%204%20-%20Pipelines.html">
-   Lab 4:  Data preprocessing and pipelines
+   Lab 4:  Data preprocessing
   </a>
  </li>
  <li class="toctree-l1">
@@ -180,7 +186,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%207a%20-%20Convolutional%20Neural%20Networks.html">
-   Lab 7a: Object recognition with convolutional neural networks
+   Lab 7a: Convolutional neural nets
   </a>
  </li>
  <li class="toctree-l1">
@@ -191,6 +197,63 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%208%20-%20AutoML.html">
    Lab 8: AutoML
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%201%20-%20Python.html">
+   Python for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%202%20-%20Python%20for%20Data%20Analysis.html">
+   Python for scientific computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%203%20-%20Machine%20Learning%20in%20Python.html">
+   Machine Learning in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%204%20-%20Decision%20Trees.html">
+   Recap: Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%205%20-%20Nearest%20Neighbors.html">
+   Recap: k-Nearest Neighbor
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 1: Machine Learning with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%203%20-%20Tutorial.html">
+   Lab 3 Tutorial: Model Selection in scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%204%20-%20Tutorial.html">
+   Lab 4 Tutorial: Data engineering pipelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%206%20-%20Tutorial.html">
+   Lab 6 Tutorial: Deep Learning with TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%207%20-%20Tutorial.html">
+   Lab 7 Tutorial: Deep Learning for text
   </a>
  </li>
 </ul>
@@ -830,8 +893,8 @@ By default, scikit-learn does a 5-fold cross-validation, hence returning 5 test 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.00044179, 0.00046229, 0.00036192, 0.00044894, 0.00045228]),
- &#39;score_time&#39;: array([0.00082421, 0.0007906 , 0.00073504, 0.00083709, 0.00080681]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.00038409, 0.00033379, 0.00038505, 0.00039816, 0.00048423]),
+ &#39;score_time&#39;: array([0.00064778, 0.00061917, 0.00065613, 0.00070786, 0.00076103]),
  &#39;test_score&#39;: array([0.96666667, 0.96666667, 0.93333333, 0.93333333, 1.        ]),
  &#39;train_score&#39;: array([1., 1., 1., 1., 1.])}
 </pre></div>
@@ -915,7 +978,21 @@ By default, scikit-learn does a 5-fold cross-validation, hence returning 5 test 
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../notebooks/Tutorial%205%20-%20Nearest%20Neighbors.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Recap: k-Nearest Neighbor</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Lab%203%20-%20Tutorial.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 3 Tutorial: Model Selection in scikit-learn</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

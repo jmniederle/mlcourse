@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -52,6 +54,7 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python for data analysis" href="../notebooks/Tutorial%201%20-%20Python.html" />
     <link rel="prev" title="Lab 7b: Neural Networks for text" href="Lab%207b%20-%20Neural%20Networks%20for%20text.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -96,6 +99,13 @@
   </a>
  </li>
 </ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%200%20-%20Prerequisites.html">
+   Prerequisites
+  </a>
+ </li>
+</ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Lectures
@@ -135,18 +145,13 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Lab%200%20-%20Prerequisites.html">
-   Prerequisites
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Lab%201a%20-%20Linear%20Models%20for%20Regression.html">
-   Lab 1a: Linear regression models
+   Lab 1a: Linear regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%201b%20-%20Linear%20Models%20for%20Classification.html">
-   Lab 1a: Linear classification models
+   Lab 1b: Linear classification
   </a>
  </li>
  <li class="toctree-l1">
@@ -181,7 +186,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%207a%20-%20Convolutional%20Neural%20Networks.html">
-   Lab 7a: Convolutional neural networks
+   Lab 7a: Convolutional neural nets
   </a>
  </li>
  <li class="toctree-l1">
@@ -192,6 +197,63 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Lab 8: AutoML
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%201%20-%20Python.html">
+   Python for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%202%20-%20Python%20for%20Data%20Analysis.html">
+   Python for scientific computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%203%20-%20Machine%20Learning%20in%20Python.html">
+   Machine Learning in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%204%20-%20Decision%20Trees.html">
+   Recap: Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%205%20-%20Nearest%20Neighbors.html">
+   Recap: k-Nearest Neighbor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%201%20-%20Tutorial.html">
+   Lab 1: Machine Learning with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%203%20-%20Tutorial.html">
+   Lab 3 Tutorial: Model Selection in scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%204%20-%20Tutorial.html">
+   Lab 4 Tutorial: Data engineering pipelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%206%20-%20Tutorial.html">
+   Lab 6 Tutorial: Deep Learning with TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%207%20-%20Tutorial.html">
+   Lab 7 Tutorial: Deep Learning for text
   </a>
  </li>
 </ul>
@@ -367,8 +429,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-2">
-   Exercise 2
+  <a class="reference internal nav-link" href="#exercise-2-other-automl-tools">
+   Exercise 2: Other AutoML tools
   </a>
  </li>
 </ul>
@@ -459,8 +521,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-2">
-   Exercise 2
+  <a class="reference internal nav-link" href="#exercise-2-other-automl-tools">
+   Exercise 2: Other AutoML tools
   </a>
  </li>
 </ul>
@@ -476,10 +538,21 @@
 <h1>Lab 8: AutoML<a class="headerlink" href="#lab-8-automl" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">openml</span> <span class="k">as</span> <span class="nn">oml</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">get_ipython</span><span class="p">()):</span>
+    <span class="o">!</span>pip install --quiet openml
+    <span class="o">!</span>pip install --quiet gama
+
+<span class="c1"># General imports</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">openml</span> <span class="k">as</span> <span class="nn">oml</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -493,7 +566,8 @@ The exercise is self-contained, but if you want to know more the documentation i
 First, make sure GAMA is installed and/or check the right version is installed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install --quiet gama
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install --quiet gama</span>
+<span class="c1"># Note: On MacOS, you may also need to install openblas, e.g. with `brew install openblas`</span>
 </pre></div>
 </div>
 </div>
@@ -527,7 +601,8 @@ Here we will use GAMA automatically find a pipeline for this task.
 First we have to fetch the data from OpenML, and split it into a train and test set:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">no2</span> <span class="o">=</span> <span class="n">oml</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="mi">547</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">no2</span> <span class="o">=</span> <span class="n">oml</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="mi">547</span><span class="p">)</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">no2</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">no2</span><span class="o">.</span><span class="n">default_target_attribute</span><span class="p">,</span> <span class="n">dataset_format</span><span class="o">=</span><span class="s1">&#39;dataframe&#39;</span><span class="p">);</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;day&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
@@ -538,20 +613,15 @@ First we have to fetch the data from OpenML, and split it into a train and test 
 <p>We can then import and use GAMA just like a scikit-learn classifier or regressor:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gama</span> <span class="kn">import</span> <span class="n">GamaClassifier</span><span class="p">,</span> <span class="n">GamaRegressor</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">gama</span> <span class="kn">import</span> <span class="n">GamaClassifier</span><span class="p">,</span> <span class="n">GamaRegressor</span>
 <span class="n">automl</span> <span class="o">=</span> <span class="n">GamaRegressor</span><span class="p">(</span>
     <span class="n">max_total_time</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="c1"># in seconds</span>
     <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="c1"># one subprocess</span>
     <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;r2&#39;</span><span class="p">,</span>  <span class="c1"># metric to optimize for</span>
-    <span class="n">verbosity</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>  <span class="c1"># to get printed updates about search progress</span>
-    <span class="n">keep_analysis_log</span><span class="o">=</span><span class="s2">&quot;no2.log&quot;</span><span class="p">,</span>  <span class="c1"># name for a log file to record search output in</span>
+    <span class="n">verbosity</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">,</span>  <span class="c1"># to get printed updates about search progress</span>
+    <span class="n">output_directory</span><span class="o">=</span><span class="s2">&quot;gama_log&quot;</span><span class="p">,</span>  <span class="c1"># name for a log file to record search output in</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using GAMA version 20.1.0.
-GamaRegressor(scoring=r2,regularize_length=True,max_pipeline_length=None,random_state=None,max_total_time=60,max_eval_time=None,n_jobs=1,verbosity=20,keep_analysis_log=/Users/joa/notebooks/mlcourse/engineer/labs/no2.log,search_method=AsyncEA(),post_processing_method=BestFitPostProcessing())
 </pre></div>
 </div>
 </div>
@@ -567,11 +637,13 @@ GamaRegressor(scoring=r2,regularize_length=True,max_pipeline_length=None,random_
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>preprocessing took 0.0641s.
-Starting EA with new population.
-Search phase evaluated 81 individuals.
-search took 53.0513s.
-postprocess took 0.2228s.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as tm
+/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as tm
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;gama.GamaRegressor.GamaRegressor at 0x2905ea910&gt;
 </pre></div>
 </div>
 </div>
@@ -583,7 +655,7 @@ postprocess took 0.2228s.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5197442219121866
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5444459043260779
 </pre></div>
 </div>
 </div>
@@ -611,94 +683,105 @@ We do this by parsing the log GAMA created (filename set by <code class="docutil
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gama.logging.GamaReport</span> <span class="kn">import</span> <span class="n">GamaReport</span>
-<span class="n">report</span> <span class="o">=</span> <span class="n">GamaReport</span><span class="p">(</span><span class="n">logfile</span><span class="o">=</span><span class="s2">&quot;no2.log&quot;</span><span class="p">)</span>
+<span class="n">report</span> <span class="o">=</span> <span class="n">GamaReport</span><span class="p">(</span><span class="n">log_directory</span><span class="o">=</span><span class="s2">&quot;gama_log&quot;</span><span class="p">)</span>
 <span class="n">evaluations</span> <span class="o">=</span> <span class="n">transform_evaluations</span><span class="p">(</span><span class="n">report</span><span class="o">.</span><span class="n">evaluations</span><span class="p">)</span>
 <span class="n">evaluations</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>  <span class="c1"># Show 5 random samples from the dataframe, but sort them by order of n.</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>preprocessing default after 0.0008s.
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+search AsyncEA after 53.0903s.
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>n</th>
-      <th>start</th>
-      <th>duration</th>
-      <th>r2</th>
-      <th>length</th>
-      <th>pipeline</th>
-      <th>r2_cummax</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>2020-04-01 11:43:49.408628</td>
-      <td>00:00:00.141432</td>
-      <td>0.473089</td>
-      <td>3.0</td>
-      <td>LinearSVR(MaxAbsScaler(PolynomialFeatures(data...</td>
-      <td>0.479288</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>41</td>
-      <td>2020-04-01 11:44:16.167167</td>
-      <td>00:00:00.397797</td>
-      <td>0.339547</td>
-      <td>2.0</td>
-      <td>ElasticNetCV(PolynomialFeatures(data, Polynomi...</td>
-      <td>0.577592</td>
-    </tr>
-    <tr>
-      <th>53</th>
-      <td>53</td>
-      <td>2020-04-01 11:44:23.566744</td>
-      <td>00:00:00.466447</td>
-      <td>-12.049856</td>
-      <td>2.0</td>
-      <td>LinearSVR(PolynomialFeatures(data, PolynomialF...</td>
-      <td>0.577592</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>57</td>
-      <td>2020-04-01 11:44:24.362592</td>
-      <td>00:00:00.365840</td>
-      <td>0.479220</td>
-      <td>1.0</td>
-      <td>ElasticNetCV(data, ElasticNetCV.l1_ratio=0.9, ...</td>
-      <td>0.577592</td>
-    </tr>
-    <tr>
-      <th>65</th>
-      <td>65</td>
-      <td>2020-04-01 11:44:26.776819</td>
-      <td>00:00:00.457241</td>
-      <td>-0.051902</td>
-      <td>3.0</td>
-      <td>ElasticNetCV(PCA(Normalizer(data, Normalizer.n...</td>
-      <td>0.577592</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+postprocess BestFitPostProcessing after 0.0179s.
+
+preprocessing default after 0.0848s.
+
+search AsyncEA after 53.0889s.
+
+postprocess BestFitPostProcessing after 7.4734s.
+
+preprocessing default after 0.0858s.
+
+search AsyncEA after 41.0925s.
+
+postprocess EnsemblePostProcessing after 0.0031s.
+
+preprocessing default after 0.0012s.
+
+search AsyncEA after 53.0912s.
+
+postprocess BestFitPostProcessing after 0.1333s.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/logging/GamaReport.py:73: DtypeWarning: Columns (1,3,4) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(fh, sep=&quot;;&quot;, header=None, index_col=False)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">0</span><span class="n">t</span><span class="o">/</span><span class="mi">5</span><span class="n">d8ttqzd773fy0wq3h5db0xr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_17053</span><span class="o">/</span><span class="mf">2342031545.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">gama.logging.GamaReport</span> <span class="kn">import</span> <span class="n">GamaReport</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">report</span> <span class="o">=</span> <span class="n">GamaReport</span><span class="p">(</span><span class="n">log_directory</span><span class="o">=</span><span class="s2">&quot;gama_log&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">evaluations</span> <span class="o">=</span> <span class="n">transform_evaluations</span><span class="p">(</span><span class="n">report</span><span class="o">.</span><span class="n">evaluations</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">evaluations</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>  <span class="c1"># Show 5 random samples from the dataframe, but sort them by order of n.</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/logging/GamaReport.py</span> in <span class="ni">__init__</span><span class="nt">(self, log_directory)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> 
+<span class="g g-Whitespace">     </span><span class="mi">58</span>         <span class="bp">self</span><span class="o">.</span><span class="n">incomplete</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phases</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span>
+<span class="ne">---&gt; </span><span class="mi">59</span>         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># updates self.evaluations and self.method_data</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>         <span class="c1"># [ ] Dashboard -- how point to directory?? =&gt; #97</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span> 
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/logging/GamaReport.py</span> in <span class="ni">update</span><span class="nt">(self, force)</span>
+<span class="nn">     83                 return pd.Series([float(value) for value</span> in <span class="ni">tuple_str[1:-1].split</span><span class="nt">(&quot;,&quot;)])</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span> 
+<span class="ne">---&gt; </span><span class="mi">85</span>             <span class="n">df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">score</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tuple_to_metrics</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span>             <span class="n">df</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>  <span class="c1"># needed?</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span>             <span class="n">df</span><span class="o">.</span><span class="n">duration</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">duration</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/pandas/core/series.py</span> in <span class="ni">apply</span><span class="nt">(self, func, convert_dtype, args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4428</span>         <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<span class="g g-Whitespace">   </span><span class="mi">4429</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4430</span><span class="s2">         return SeriesApply(self, func, convert_dtype, args, kwargs).apply()</span>
+<span class="g g-Whitespace">   </span><span class="mi">4431</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4432</span><span class="s2">     def _reduce(</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/pandas/core/apply.py</span> in <span class="ni">apply</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1080</span><span class="s2">             return self.apply_str()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1081</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">1082</span><span class="s2">         return self.apply_standard()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1083</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1084</span><span class="s2">     def agg(self):</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/pandas/core/apply.py</span> in <span class="ni">apply_standard</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1135</span><span class="s2">                 # List[Union[Callable[..., Any], str]]]]]&quot;; expected</span>
+<span class="g g-Whitespace">   </span><span class="mi">1136</span><span class="s2">                 # &quot;Callable[[Any], Any]&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1137</span><span class="s2">                 mapped = lib.map_infer(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1138</span><span class="s2">                     values,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1139</span><span class="s2">                     f,  # type: ignore[arg-type]</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/pandas/_libs/lib.pyx</span> in <span class="ni">pandas._libs.lib.map_infer</span><span class="nt">()</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/logging/GamaReport.py</span> in <span class="ni">tuple_to_metrics</span><span class="nt">(tuple_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             def tuple_to_metrics(tuple_str):</span>
+<span class="nn">---&gt; 83                 return pd.Series([float(value) for value</span> in <span class="ni">tuple_str[1:-1].split</span><span class="nt">(&quot;,&quot;)])</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2">             df[self.metrics] = df.score.apply(tuple_to_metrics)</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/logging/GamaReport.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             def tuple_to_metrics(tuple_str):</span>
+<span class="nn">---&gt; 83                 return pd.Series([float(value) for value</span> in <span class="ni">tuple_str[1:-1].split</span><span class="nt">(&quot;,&quot;)])</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2">             df[self.metrics] = df.score.apply(tuple_to_metrics)</span>
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;cor&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>This dataframe has the following columns:</p>
 <ul class="simple">
@@ -740,55 +823,90 @@ We do this by parsing the log GAMA created (filename set by <code class="docutil
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>n</th>
+      <th>pid</th>
       <th>start</th>
       <th>duration</th>
+      <th>t_process</th>
+      <th>score</th>
+      <th>pipeline</th>
+      <th>error</th>
+      <th>parent0</th>
+      <th>parent1</th>
+      <th>origin</th>
+      <th>n</th>
       <th>r2</th>
       <th>length</th>
-      <th>pipeline</th>
       <th>r2_cummax</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>28</th>
-      <td>28</td>
-      <td>2020-04-01 11:44:11.265527</td>
-      <td>00:00:00.340073</td>
-      <td>0.577592</td>
-      <td>2.0</td>
-      <td>GradientBoostingRegressor(PolynomialFeatures(d...</td>
-      <td>0.577592</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>48</td>
-      <td>2020-04-01 11:44:19.312907</td>
-      <td>00:00:01.151389</td>
-      <td>0.542797</td>
-      <td>1.0</td>
-      <td>RandomForestRegressor(data, RandomForestRegres...</td>
-      <td>0.577592</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>12</td>
-      <td>2020-04-01 11:43:53.681292</td>
-      <td>00:00:00.792249</td>
-      <td>0.516778</td>
+      <th>0</th>
+      <td>79783</td>
+      <td>2022-02-02 22:23:44.711950</td>
+      <td>0 days 00:00:00.000200987</td>
+      <td>0.000197</td>
+      <td>(-inf, -3)</td>
+      <td>GradientBoostingRegressor(StandardScaler(MaxAb...</td>
+      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>new</td>
+      <td>0</td>
+      <td>-inf</td>
       <td>3.0</td>
-      <td>ExtraTreesRegressor(VarianceThreshold(Polynomi...</td>
-      <td>0.517488</td>
+      <td>-inf</td>
     </tr>
     <tr>
-      <th>54</th>
-      <td>54</td>
-      <td>2020-04-01 11:44:24.042641</td>
-      <td>00:00:00.077464</td>
-      <td>0.418263</td>
+      <th>29319</th>
+      <td>79783</td>
+      <td>2022-02-02 22:24:19.406984</td>
+      <td>0 days 00:00:00.000093937</td>
+      <td>0.000100</td>
+      <td>(-inf, -1)</td>
+      <td>GradientBoostingRegressor(data, GradientBoosti...</td>
+      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
+      <td>b664ffba-b8e4-4989-b205-0717fbcb3995</td>
+      <td>NaN</td>
+      <td>mut_replace_terminal</td>
+      <td>29319</td>
+      <td>-inf</td>
+      <td>1.0</td>
+      <td>-inf</td>
+    </tr>
+    <tr>
+      <th>29311</th>
+      <td>79783</td>
+      <td>2022-02-02 22:24:19.398273</td>
+      <td>0 days 00:00:00.000107050</td>
+      <td>0.000112</td>
+      <td>(-inf, -2)</td>
+      <td>ExtraTreesRegressor(FastICA(data, FastICA.tol=...</td>
+      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
+      <td>f5292317-1ea0-42a9-8ee3-505328a6bd9c</td>
+      <td>NaN</td>
+      <td>mut_insert</td>
+      <td>29311</td>
+      <td>-inf</td>
+      <td>2.0</td>
+      <td>-inf</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>79783</td>
+      <td>2022-02-02 22:23:44.748849</td>
+      <td>0 days 00:00:00.000212908</td>
+      <td>0.000219</td>
+      <td>(-inf, -4)</td>
+      <td>DecisionTreeRegressor(StandardScaler(Normalize...</td>
+      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
+      <td>d4670a36-d05a-445d-9d17-18dd92f205b2</td>
+      <td>NaN</td>
+      <td>mut_insert</td>
+      <td>88</td>
+      <td>-inf</td>
       <td>4.0</td>
-      <td>LinearSVR(SelectFwe(MaxAbsScaler(PolynomialFea...</td>
-      <td>0.577592</td>
+      <td>-inf</td>
     </tr>
   </tbody>
 </table>
@@ -807,7 +925,7 @@ We do this by parsing the log GAMA created (filename set by <code class="docutil
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11a97cda0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;n&#39;&gt;
 </pre></div>
 </div>
 <img alt="../_images/Lab 8 - AutoML_23_1.png" src="../_images/Lab 8 - AutoML_23_1.png" />
@@ -848,18 +966,18 @@ Take a short break once it’s all running, or ask us a question about the lectu
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">automl</span> <span class="o">=</span> <span class="n">GamaClassifier</span><span class="p">(</span>
-    <span class="n">max_total_time</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span>
+    <span class="n">max_total_time</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
     <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span>
     <span class="n">verbosity</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>  <span class="c1"># to get printed updates about search progress</span>
-    <span class="n">keep_analysis_log</span><span class="o">=</span><span class="s2">&quot;trees.log&quot;</span><span class="p">,</span>  <span class="c1"># name for a log file to record search output in</span>
+    <span class="n">output_directory</span><span class="o">=</span><span class="s2">&quot;gama_log2&quot;</span><span class="p">,</span>  <span class="c1"># name for a log file to record search output in</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using GAMA version 20.1.0.
-GamaClassifier(scoring=accuracy,regularize_length=True,max_pipeline_length=None,random_state=None,max_total_time=180,max_eval_time=None,n_jobs=2,verbosity=20,keep_analysis_log=/Users/joa/notebooks/mlcourse/engineer/labs/trees.log,search_method=AsyncEA(),post_processing_method=BestFitPostProcessing())
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using GAMA version 20.2.1.
+INIT:GamaClassifier(scoring=accuracy,regularize_length=True,max_pipeline_length=None,random_state=None,max_total_time=180,max_eval_time=None,n_jobs=2,max_memory_mb=None,verbosity=20,search=AsyncEA(),post_processing=BestFitPostProcessing(),output_directory=gama_log2,store=logs)
 </pre></div>
 </div>
 </div>
@@ -871,11 +989,22 @@ GamaClassifier(scoring=accuracy,regularize_length=True,max_pipeline_length=None,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>preprocessing took 1.4381s.
-Starting EA with new population.
-Search phase evaluated 19 individuals.
-search took 160.0395s.
-postprocess took 1.8072s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>START: preprocessing default
+STOP: preprocessing default after 0.0864s.
+START: search AsyncEA
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as tm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting EA with new population.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as tm
+/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as tm
 </pre></div>
 </div>
 </div>
@@ -883,11 +1012,6 @@ postprocess took 1.8072s.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">automl</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5294224219146315
 </pre></div>
 </div>
 </div>
@@ -905,19 +1029,13 @@ GAMA can be configured to automatically build an ensemble from the models it fou
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gama.postprocessing</span> <span class="kn">import</span> <span class="n">EnsemblePostProcessing</span>
 
 <span class="n">automl_with_ensemble</span> <span class="o">=</span> <span class="n">GamaClassifier</span><span class="p">(</span>
-    <span class="n">max_total_time</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span>
+    <span class="n">max_total_time</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
     <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="n">verbosity</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
-    <span class="n">keep_analysis_log</span><span class="o">=</span><span class="s2">&quot;covtype_ensemble.log&quot;</span><span class="p">,</span>
+    <span class="n">output_directory</span><span class="o">=</span><span class="s2">&quot;gama_log3&quot;</span><span class="p">,</span>
     <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span>
-    <span class="n">post_processing_method</span><span class="o">=</span><span class="n">EnsemblePostProcessing</span><span class="p">(),</span>  <span class="c1"># Specify to build an ensemble after search</span>
+    <span class="n">post_processing</span><span class="o">=</span><span class="n">EnsemblePostProcessing</span><span class="p">(),</span>  <span class="c1"># Specify to build an ensemble after search</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using GAMA version 20.1.0.
-GamaClassifier(scoring=accuracy,regularize_length=True,max_pipeline_length=None,random_state=None,max_total_time=360,max_eval_time=None,n_jobs=2,verbosity=20,keep_analysis_log=/Users/joa/notebooks/mlcourse/engineer/labs/covtype_ensemble.log,search_method=AsyncEA(),post_processing_method=EnsemblePostProcessing(ensemble_size=25,hillclimb_size=10000,max_models=200))
 </pre></div>
 </div>
 </div>
@@ -930,43 +1048,11 @@ GamaClassifier(scoring=accuracy,regularize_length=True,max_pipeline_length=None,
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>preprocessing took 0.6441s.
-Starting EA with new population.
-Search phase evaluated 23 individuals.
-search took 251.0439s.
-Not downsampling because only 10000 samples were stored.
-Ensemble size 10 , best score: 0.6063
-Ensemble size 11 , best score: 0.6456
-Ensemble size 12 , best score: 0.6542
-Ensemble size 13 , best score: 0.6606
-Ensemble size 14 , best score: 0.6663
-Ensemble size 15 , best score: 0.6665
-Ensemble size 16 , best score: 0.6668
-Ensemble size 17 , best score: 0.6665
-Ensemble size 18 , best score: 0.6688
-Ensemble size 19 , best score: 0.667
-Ensemble size 20 , best score: 0.6671
-Ensemble size 21 , best score: 0.6686
-Ensemble size 22 , best score: 0.6672
-Ensemble size 23 , best score: 0.6674
-Ensemble size 24 , best score: 0.6689
-Ensemble size 25 , best score: 0.6673
-Building ensemble took 1.2759668827056885s. Fitting ensemble with timeout 107.03508734703064s.
-postprocess took 1.2786s.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">automl_with_ensemble</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ensemble score: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ensemble score: 0.6703
 </pre></div>
 </div>
 </div>
@@ -1021,13 +1107,6 @@ We will now compare those results to GAMA:</p>
 <li><p>split the data into a train and test set (80%/20%)</p></li>
 <li><p>run GAMA optimizing for accuracy, with n_jobs=1 and (at least) 5 minutes of runtime</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##### Exercise 1.6</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Results will vary wildly.
 Running it a few times can give scores ranging from ~10% accuracy to ~35% accuracy.
 More time will lead to better results, but it will not approach ConvNet levels of performance.
@@ -1042,9 +1121,9 @@ Why do you think this is?</p>
 </div>
 </div>
 </div>
-<div class="section" id="exercise-2">
-<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h2>
-<p>There are AutoML tools that are specifically designed to automatically learn neural network architectures. For example <a class="reference external" href="https://autokeras.com/">AutoKeras</a> (Texas A&amp;M University), <a class="reference external" href="https://autogluon.mxnet.io/">AutoGluon</a> (commercial, Amazon), and <a class="reference external" href="https://cloud.google.com/automl">Cloud AutoML</a> (commercial, Google). If you are eager, do go and compare your own ConvNet to these AutoML systems intead!</p>
+<div class="section" id="exercise-2-other-automl-tools">
+<h2>Exercise 2: Other AutoML tools<a class="headerlink" href="#exercise-2-other-automl-tools" title="Permalink to this headline">¶</a></h2>
+<p>There are AutoML tools that are specifically designed to automatically learn neural network architectures. For example <a class="reference external" href="https://autokeras.com/">AutoKeras</a> (Texas A&amp;M University), <a class="reference external" href="https://autogluon.mxnet.io/">AutoGluon</a> (commercial, Amazon), and <a class="reference external" href="https://cloud.google.com/automl">Cloud AutoML</a> (commercial, Google). If you are eager, do go and compare your own ConvNet to these AutoML systems instead!</p>
 </div>
 </div>
 
@@ -1079,6 +1158,13 @@ Why do you think this is?</p>
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Lab 7b: Neural Networks for text</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../notebooks/Tutorial%201%20-%20Python.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python for data analysis</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

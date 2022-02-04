@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,7 +55,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Lab 8: AutoML" href="Lab%208%20-%20AutoML.html" />
-    <link rel="prev" title="Lab 7a: Object recognition with convolutional neural networks" href="Lab%207a%20-%20Convolutional%20Neural%20Networks.html" />
+    <link rel="prev" title="Lab 7a: Convolutional neural nets" href="Lab%207a%20-%20Convolutional%20Neural%20Networks.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,6 +99,13 @@
   </a>
  </li>
 </ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%200%20-%20Prerequisites.html">
+   Prerequisites
+  </a>
+ </li>
+</ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Lectures
@@ -136,38 +145,33 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Lab%200%20-%20Prerequisites.html">
-   Prerequisites
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="Lab%201a%20-%20Linear%20Models%20for%20Regression.html">
-   Lab 1: Linear models
+   Lab 1a: Linear regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%201b%20-%20Linear%20Models%20for%20Classification.html">
-   Lab 1: Linear models
+   Lab 1b: Linear classification
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%202%20-%20Kernelization.html">
-   Lab 2: Tuning Support Vector Machines
+   Lab 2: Kernelization
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%203a%20-%20Model%20Selection.html">
-   Lab 3a: Model selection: dark matter
+   Lab 3a: Model selection
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%203b%20-%20Ensembles.html">
-   Lab 3b: Using trees to detect trees
+   Lab 3b: Ensembles
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%204%20-%20Pipelines.html">
-   Lab 4:  Data preprocessing and pipelines
+   Lab 4:  Data preprocessing
   </a>
  </li>
  <li class="toctree-l1">
@@ -182,7 +186,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%207a%20-%20Convolutional%20Neural%20Networks.html">
-   Lab 7a: Object recognition with convolutional neural networks
+   Lab 7a: Convolutional neural nets
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -193,6 +197,63 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Lab%208%20-%20AutoML.html">
    Lab 8: AutoML
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%201%20-%20Python.html">
+   Python for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%202%20-%20Python%20for%20Data%20Analysis.html">
+   Python for scientific computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%203%20-%20Machine%20Learning%20in%20Python.html">
+   Machine Learning in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%204%20-%20Decision%20Trees.html">
+   Recap: Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%205%20-%20Nearest%20Neighbors.html">
+   Recap: k-Nearest Neighbor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%201%20-%20Tutorial.html">
+   Lab 1: Machine Learning with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%203%20-%20Tutorial.html">
+   Lab 3 Tutorial: Model Selection in scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%204%20-%20Tutorial.html">
+   Lab 4 Tutorial: Data engineering pipelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%206%20-%20Tutorial.html">
+   Lab 6 Tutorial: Deep Learning with TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%207%20-%20Tutorial.html">
+   Lab 7 Tutorial: Deep Learning for text
   </a>
  </li>
 </ul>
@@ -373,22 +434,20 @@
 <h1>Lab 7b: Neural Networks for text<a class="headerlink" href="#lab-7b-neural-networks-for-text" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Global imports and settings</span>
-<span class="kn">from</span> <span class="nn">preamble</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">tensorflow.keras</span> <span class="k">as</span> <span class="nn">keras</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using Keras&quot;</span><span class="p">,</span><span class="n">keras</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Auto-setup when running on Google Colab</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">get_ipython</span><span class="p">()):</span>
+    <span class="o">!</span>pip install openml
+
+<span class="c1"># General imports</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">125</span> <span class="c1"># Use 300 for PDF, 100 for slides</span>
-<span class="c1"># InteractiveShell.ast_node_interactivity = &quot;all&quot;</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;style&gt;html, body{overflow-y: visible !important} .CodeMirror{min-width:105% !important;} .rise-enabled .CodeMirror, .rise-enabled .output_subarea{font-size:140%; line-height:1.2; overflow: visible;} .output_subarea pre</span><span class="si">{width:110%}</span><span class="s1">&lt;/style&gt;&#39;&#39;&#39;</span><span class="p">)</span> <span class="c1"># For slides</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">openml</span> <span class="k">as</span> <span class="nn">oml</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using Keras 2.2.4-tf
-</pre></div>
-</div>
-<div class="output text_html"><style>html, body{overflow-y: visible !important} .CodeMirror{min-width:105% !important;} .rise-enabled .CodeMirror, .rise-enabled .output_subarea{font-size:140%; line-height:1.2; overflow: visible;} .output_subarea pre{width:110%}</style></div></div>
 </div>
 <p>Before you start, read the Tutorial for this lab (‘Deep Learning with Python’)</p>
 <div class="section" id="exercise-1-sentiment-analysis">
@@ -559,7 +618,7 @@ News wire 10: ? period ended december 31 shr profit 11 cts vs loss 24 cts net pr
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab 7a: Object recognition with convolutional neural networks</p>
+            <p class="prev-next-title">Lab 7a: Convolutional neural nets</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Lab%208%20-%20AutoML.html" title="next page">

@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -52,6 +54,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 4 Tutorial: Data engineering pipelines" href="Lab%204%20-%20Tutorial.html" />
+    <link rel="prev" title="Lab 1: Machine Learning with Python" href="Lab%201%20-%20Tutorial.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -196,6 +200,63 @@
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%201%20-%20Python.html">
+   Python for data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%202%20-%20Python%20for%20Data%20Analysis.html">
+   Python for scientific computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%203%20-%20Machine%20Learning%20in%20Python.html">
+   Machine Learning in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%204%20-%20Decision%20Trees.html">
+   Recap: Decision Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/Tutorial%205%20-%20Nearest%20Neighbors.html">
+   Recap: k-Nearest Neighbor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%201%20-%20Tutorial.html">
+   Lab 1: Machine Learning with Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 3 Tutorial: Model Selection in scikit-learn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%204%20-%20Tutorial.html">
+   Lab 4 Tutorial: Data engineering pipelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%206%20-%20Tutorial.html">
+   Lab 6 Tutorial: Deep Learning with TensorFlow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab%207%20-%20Tutorial.html">
+   Lab 7 Tutorial: Deep Learning for text
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -324,13 +385,11 @@
     <a class="reference internal nav-link" href="#shuffle-split">
      Shuffle-split
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#grouped-cross-validation">
-       Grouped cross-validation
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grouped-cross-validation">
+     Grouped cross-validation
+    </a>
    </li>
   </ul>
  </li>
@@ -358,13 +417,11 @@
     <a class="reference internal nav-link" href="#precision-recall-and-roc-curves">
      Precision-Recall and ROC curves
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#multi-class-prediction">
-       Multi-class prediction
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multi-class-prediction">
+     Multi-class prediction
+    </a>
    </li>
   </ul>
  </li>
@@ -444,13 +501,11 @@
     <a class="reference internal nav-link" href="#shuffle-split">
      Shuffle-split
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#grouped-cross-validation">
-       Grouped cross-validation
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grouped-cross-validation">
+     Grouped cross-validation
+    </a>
    </li>
   </ul>
  </li>
@@ -478,13 +533,11 @@
     <a class="reference internal nav-link" href="#precision-recall-and-roc-curves">
      Precision-Recall and ROC curves
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#multi-class-prediction">
-       Multi-class prediction
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multi-class-prediction">
+     Multi-class prediction
+    </a>
    </li>
   </ul>
  </li>
@@ -533,9 +586,17 @@
 <h1>Lab 3 Tutorial: Model Selection in scikit-learn<a class="headerlink" href="#lab-3-tutorial-model-selection-in-scikit-learn" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Global imports and settings</span>
-<span class="kn">from</span> <span class="nn">preamble</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># General imports</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">openml</span> <span class="k">as</span> <span class="nn">oml</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+
+<span class="c1"># We can ignore ConvergenceWarnings for illustration purposes</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -602,7 +663,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validation scores: [0.967 1.    0.933 0.967 1.   ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validation scores: [0.96666667 1.         0.93333333 0.96666667 1.        ]
 Average cross-validation score: 0.97
 Variance in cross-validation score: 0.0006
 </pre></div>
@@ -634,9 +695,9 @@ Variance in cross-validation score: 0.0006
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validation scores KFold(n_splits=5):
-[1.    1.    0.867 0.933 0.833]
+[1.         1.         0.86666667 0.93333333 0.83333333]
 Cross-validation scores StratifiedKFold(n_splits=5, shuffle=True):
-[0.967 0.933 0.967 0.967 0.967]
+[1.         0.96666667 0.93333333 1.         0.93333333]
 </pre></div>
 </div>
 </div>
@@ -677,13 +738,15 @@ Mean accuracy: 0.97
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validation scores:
-[0.973 0.973 0.973 0.96  0.973 0.973 0.947 0.933 0.973 0.987]
+[0.96       0.97333333 0.94666667 0.97333333 0.94666667 0.97333333
+ 0.94666667 0.92       0.96       0.96      ]
 </pre></div>
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="grouped-cross-validation">
-<h4>Grouped cross-validation<a class="headerlink" href="#grouped-cross-validation" title="Permalink to this headline">¶</a></h4>
+<h3>Grouped cross-validation<a class="headerlink" href="#grouped-cross-validation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Add an array with group membership to <code class="docutils literal notranslate"><span class="pre">cross_val_scores</span></code></p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">GroupKFold</span></code> with the number of groups as CV procedure</p></li>
@@ -695,18 +758,15 @@ Mean accuracy: 0.97
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="c1"># the first three samples belong to the same group, etc.</span>
 <span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">logreg</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">groups</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">GroupKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cross_val_score(logreg, X, y, groups, cv=GroupKFold(n_splits=4)&quot;</span><span class="p">)</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">logreg</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">groups</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">GroupKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cross-validation scores :</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cross_val_score(logreg, X, y, groups, cv=GroupKFold(n_splits=4)
-Cross-validation scores :
-[0.667 0.667 1.    0.667]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validation scores :
+[0.66666667 0.66666667 1.         0.66666667]
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -733,7 +793,7 @@ Cross-validation scores :
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_breast_cancer</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">load_breast_cancer</span><span class="p">()</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
     <span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -836,33 +896,33 @@ weighted avg       0.94      0.94      0.94       143
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
 
 <span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+<span class="n">X_train2</span><span class="p">,</span> <span class="n">X_test2</span><span class="p">,</span> <span class="n">y_train2</span><span class="p">,</span> <span class="n">y_test2</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
     <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
 <span class="n">lr2</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
-<span class="n">lr2</span> <span class="o">=</span> <span class="n">lr2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">lr2</span> <span class="o">=</span> <span class="n">lr2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train2</span><span class="p">,</span> <span class="n">y_train2</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decision function:</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr2</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:</span><span class="mi">6</span><span class="p">,</span> <span class="p">:]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Decision function:</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr2</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test2</span><span class="p">)[:</span><span class="mi">6</span><span class="p">,</span> <span class="p">:]))</span>
 <span class="c1"># show the first few entries of predict_proba</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted probabilities:</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr2</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:</span><span class="mi">6</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted probabilities:</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lr2</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test2</span><span class="p">)[:</span><span class="mi">6</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decision function:
-[[ -3.03500434   2.29431794   0.7406864 ]
- [  5.91885301   3.09090408  -9.00975709]
- [-10.0519183    1.87466115   8.17725715]
- [ -2.73284203   2.03624031   0.69660172]
- [ -3.73732851   2.47561636   1.26171215]
- [  6.03553736   3.03455824  -9.0700956 ]]
+[[ -3.03499211   2.29425161   0.7407405 ]
+ [  5.91897372   3.09086147  -9.0098352 ]
+ [-10.05185099   1.87457159   8.17727941]
+ [ -2.73279105   2.03622549   0.69656555]
+ [ -3.73730572   2.47556657   1.26173915]
+ [  6.03557844   3.0345983   -9.07017674]]
 Predicted probabilities:
-[[3.98524267e-03 8.22148051e-01 1.73866707e-01]
- [9.44167285e-01 5.58324047e-02 3.10195832e-07]
- [1.20885715e-08 1.82819547e-03 9.98171792e-01]
- [6.68134091e-03 7.87136004e-01 2.06182655e-01]
- [1.54216290e-03 7.69800035e-01 2.28657802e-01]
- [9.52618091e-01 4.73816473e-02 2.62195834e-07]]
+[[3.98547105e-03 8.22130578e-01 1.73883951e-01]
+ [9.44175894e-01 5.58237959e-02 3.10136994e-07]
+ [1.20891186e-08 1.82799143e-03 9.98171996e-01]
+ [6.68180705e-03 7.87139122e-01 2.06179071e-01]
+ [1.54224758e-03 7.69786431e-01 2.28671321e-01]
+ [9.52618137e-01 4.73816007e-02 2.62163802e-07]]
 </pre></div>
 </div>
 </div>
@@ -885,7 +945,7 @@ Predicted probabilities:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_recall_curve</span>
 <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">precision_recall_curve</span><span class="p">(</span>
-    <span class="n">y_test</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span> 
+    <span class="n">y_test</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -900,7 +960,7 @@ Predicted probabilities:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average precision of logreg: 0.996
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average precision of logreg: 0.995
 </pre></div>
 </div>
 </div>
@@ -916,14 +976,15 @@ Predicted probabilities:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AUC for Random Forest: 0.992
-AUC for SVC: 0.992
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AUC for Random Forest: 0.991
+AUC for SVC: 0.991
 </pre></div>
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="multi-class-prediction">
-<h4>Multi-class prediction<a class="headerlink" href="#multi-class-prediction" title="Permalink to this headline">¶</a></h4>
+<h3>Multi-class prediction<a class="headerlink" href="#multi-class-prediction" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Build C models, one for every class vs all others</p></li>
 <li><p>Use micro-, macro-, or weighted averaging</p></li>
@@ -946,7 +1007,6 @@ Macro average f1 score: 0.925
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="using-evaluation-metrics-in-model-selection">
 <h2>Using evaluation metrics in model selection<a class="headerlink" href="#using-evaluation-metrics-in-model-selection" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -957,18 +1017,18 @@ Macro average f1 score: 0.925
 </ul>
 </li>
 </ul>
-<p><img alt="scorers" src="images/03_scoring.png" /></p>
+<p><img alt="scorers" src="https://raw.githubusercontent.com/ML-course/master/master/notebooks/images/03_scoring.png" /></p>
 <p>Or simply look up like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics.scorer</span> <span class="kn">import</span> <span class="n">SCORERS</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">SCORERS</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available scorers:</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">SCORERS</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Available scorers:
-[&#39;accuracy&#39;, &#39;adjusted_mutual_info_score&#39;, &#39;adjusted_rand_score&#39;, &#39;average_precision&#39;, &#39;balanced_accuracy&#39;, &#39;completeness_score&#39;, &#39;explained_variance&#39;, &#39;f1&#39;, &#39;f1_macro&#39;, &#39;f1_micro&#39;, &#39;f1_samples&#39;, &#39;f1_weighted&#39;, &#39;fowlkes_mallows_score&#39;, &#39;homogeneity_score&#39;, &#39;jaccard&#39;, &#39;jaccard_macro&#39;, &#39;jaccard_micro&#39;, &#39;jaccard_samples&#39;, &#39;jaccard_weighted&#39;, &#39;max_error&#39;, &#39;mutual_info_score&#39;, &#39;neg_brier_score&#39;, &#39;neg_log_loss&#39;, &#39;neg_mean_absolute_error&#39;, &#39;neg_mean_gamma_deviance&#39;, &#39;neg_mean_poisson_deviance&#39;, &#39;neg_mean_squared_error&#39;, &#39;neg_mean_squared_log_error&#39;, &#39;neg_median_absolute_error&#39;, &#39;neg_root_mean_squared_error&#39;, &#39;normalized_mutual_info_score&#39;, &#39;precision&#39;, &#39;precision_macro&#39;, &#39;precision_micro&#39;, &#39;precision_samples&#39;, &#39;precision_weighted&#39;, &#39;r2&#39;, &#39;recall&#39;, &#39;recall_macro&#39;, &#39;recall_micro&#39;, &#39;recall_samples&#39;, &#39;recall_weighted&#39;, &#39;roc_auc&#39;, &#39;roc_auc_ovo&#39;, &#39;roc_auc_ovo_weighted&#39;, &#39;roc_auc_ovr&#39;, &#39;roc_auc_ovr_weighted&#39;, &#39;v_measure_score&#39;]
+[&#39;accuracy&#39;, &#39;adjusted_mutual_info_score&#39;, &#39;adjusted_rand_score&#39;, &#39;average_precision&#39;, &#39;balanced_accuracy&#39;, &#39;completeness_score&#39;, &#39;explained_variance&#39;, &#39;f1&#39;, &#39;f1_macro&#39;, &#39;f1_micro&#39;, &#39;f1_samples&#39;, &#39;f1_weighted&#39;, &#39;fowlkes_mallows_score&#39;, &#39;homogeneity_score&#39;, &#39;jaccard&#39;, &#39;jaccard_macro&#39;, &#39;jaccard_micro&#39;, &#39;jaccard_samples&#39;, &#39;jaccard_weighted&#39;, &#39;max_error&#39;, &#39;mutual_info_score&#39;, &#39;neg_brier_score&#39;, &#39;neg_log_loss&#39;, &#39;neg_mean_absolute_error&#39;, &#39;neg_mean_absolute_percentage_error&#39;, &#39;neg_mean_gamma_deviance&#39;, &#39;neg_mean_poisson_deviance&#39;, &#39;neg_mean_squared_error&#39;, &#39;neg_mean_squared_log_error&#39;, &#39;neg_median_absolute_error&#39;, &#39;neg_root_mean_squared_error&#39;, &#39;normalized_mutual_info_score&#39;, &#39;precision&#39;, &#39;precision_macro&#39;, &#39;precision_micro&#39;, &#39;precision_samples&#39;, &#39;precision_weighted&#39;, &#39;r2&#39;, &#39;rand_score&#39;, &#39;recall&#39;, &#39;recall_macro&#39;, &#39;recall_micro&#39;, &#39;recall_samples&#39;, &#39;recall_weighted&#39;, &#39;roc_auc&#39;, &#39;roc_auc_ovo&#39;, &#39;roc_auc_ovo_weighted&#39;, &#39;roc_auc_ovr&#39;, &#39;roc_auc_ovr_weighted&#39;, &#39;top_k_accuracy&#39;, &#39;v_measure_score&#39;]
 </pre></div>
 </div>
 </div>
@@ -995,9 +1055,11 @@ Macro average f1 score: 0.925
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Default scoring: [0.975 0.992 1.    0.994 0.981]
-Explicit accuracy scoring: [0.975 0.992 1.    0.994 0.981]
-AUC scoring: [0.997 0.999 1.    1.    0.984]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Default scoring: [0.975      0.99166667 1.         0.99442897 0.98050139]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Explicit accuracy scoring: [0.975      0.99166667 1.         0.99442897 0.98050139]
+AUC scoring: [0.99717078 0.99854252 1.         0.999828   0.98400413]
 </pre></div>
 </div>
 </div>
@@ -1052,18 +1114,9 @@ AUC scoring: [0.997 0.999 1.    1.    0.984]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GridSearchCV(cv=5, error_score=nan,
-             estimator=SVC(C=1.0, break_ties=False, cache_size=200,
-                           class_weight=None, coef0=0.0,
-                           decision_function_shape=&#39;ovr&#39;, degree=3,
-                           gamma=&#39;scale&#39;, kernel=&#39;rbf&#39;, max_iter=-1,
-                           probability=False, random_state=None, shrinking=True,
-                           tol=0.001, verbose=False),
-             iid=&#39;deprecated&#39;, n_jobs=None,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GridSearchCV(cv=5, estimator=SVC(),
              param_grid={&#39;C&#39;: [0.001, 0.01, 0.1, 1, 10, 100],
-                         &#39;gamma&#39;: [0.001, 0.01, 0.1, 1, 10, 100]},
-             pre_dispatch=&#39;2*n_jobs&#39;, refit=True, return_train_score=False,
-             scoring=None, verbose=0)
+                         &#39;gamma&#39;: [0.001, 0.01, 0.1, 1, 10, 100]})
 </pre></div>
 </div>
 </div>
@@ -1103,10 +1156,7 @@ Best cross-validation score: 0.97
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best estimator:
-SVC(C=10, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
-    decision_function_shape=&#39;ovr&#39;, degree=3, gamma=0.1, kernel=&#39;rbf&#39;,
-    max_iter=-1, probability=False, random_state=None, shrinking=True,
-    tol=0.001, verbose=False)
+SVC(C=10, gamma=0.1)
 </pre></div>
 </div>
 </div>
@@ -1157,7 +1207,7 @@ SVC(C=10, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validation scores:  [0.967 1.    0.9   0.967 1.   ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validation scores:  [0.96666667 1.         0.9        0.96666667 1.        ]
 Mean cross-validation score:  0.9666666666666668
 </pre></div>
 </div>
@@ -1198,18 +1248,9 @@ Mean cross-validation score:  0.9666666666666668
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomizedSearchCV(cv=None, error_score=nan,
-                   estimator=SVC(C=1.0, break_ties=False, cache_size=200,
-                                 class_weight=None, coef0=0.0,
-                                 decision_function_shape=&#39;ovr&#39;, degree=3,
-                                 gamma=&#39;scale&#39;, kernel=&#39;rbf&#39;, max_iter=-1,
-                                 probability=False, random_state=None,
-                                 shrinking=True, tol=0.001, verbose=False),
-                   iid=&#39;deprecated&#39;, n_iter=20, n_jobs=None,
-                   param_distributions={&#39;C&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x11d558828&gt;,
-                                        &#39;gamma&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x11d558eb8&gt;},
-                   pre_dispatch=&#39;2*n_jobs&#39;, random_state=None, refit=True,
-                   return_train_score=False, scoring=None, verbose=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomizedSearchCV(estimator=SVC(), n_iter=20,
+                   param_distributions={&#39;C&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x16c9502e0&gt;,
+                                        &#39;gamma&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x16c9665e0&gt;})
 </pre></div>
 </div>
 </div>
@@ -1242,7 +1283,21 @@ Mean cross-validation score:  0.9666666666666668
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Lab%201%20-%20Tutorial.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab 1: Machine Learning with Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Lab%204%20-%20Tutorial.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 4 Tutorial: Data engineering pipelines</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
