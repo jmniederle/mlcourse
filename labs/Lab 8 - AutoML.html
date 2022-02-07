@@ -668,7 +668,7 @@ First we have to fetch the data from OpenML, and split it into a train and test 
   import pandas.util.testing as tm
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;gama.GamaRegressor.GamaRegressor at 0x296f162e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;gama.GamaRegressor.GamaRegressor at 0x2a0ae8430&gt;
 </pre></div>
 </div>
 </div>
@@ -680,7 +680,7 @@ First we have to fetch the data from OpenML, and split it into a train and test 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.23954340280900388
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2963683906132034
 </pre></div>
 </div>
 </div>
@@ -715,136 +715,94 @@ We do this by parsing the log GAMA created (filename set by <code class="docutil
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>preprocessing default after 0.0008s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>preprocessing default after 0.0030s.
 
-search AsyncEA after 53.0939s.
+search AsyncEA after 53.0981s.
 
-postprocess BestFitPostProcessing after 0.0040s.
+postprocess BestFitPostProcessing after 0.0473s.
+
+preprocessing default after 0.1213s.
+
+search AsyncEA after 53.1553s.
+
+postprocess BestFitPostProcessing after 22.4502s.
+
+preprocessing default after 0.0908s.
+
+search AsyncEA after 41.1320s.
+
+postprocess EnsemblePostProcessing after 0.0050s.
+
+preprocessing default after 0.0008s.
+
+search AsyncEA after 53.0950s.
+
+postprocess BestFitPostProcessing after 0.1085s.
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">0</span><span class="n">t</span><span class="o">/</span><span class="mi">5</span><span class="n">d8ttqzd773fy0wq3h5db0xr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_2304</span><span class="o">/</span><span class="mf">2342031545.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">gama.logging.GamaReport</span> <span class="kn">import</span> <span class="n">GamaReport</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">report</span> <span class="o">=</span> <span class="n">GamaReport</span><span class="p">(</span><span class="n">log_directory</span><span class="o">=</span><span class="s2">&quot;gama_log&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">evaluations</span> <span class="o">=</span> <span class="n">transform_evaluations</span><span class="p">(</span><span class="n">report</span><span class="o">.</span><span class="n">evaluations</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">evaluations</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>  <span class="c1"># Show 5 random samples from the dataframe, but sort them by order of n.</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/logging/GamaReport.py</span> in <span class="ni">__init__</span><span class="nt">(self, log_directory)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> 
+<span class="g g-Whitespace">     </span><span class="mi">58</span>         <span class="bp">self</span><span class="o">.</span><span class="n">incomplete</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phases</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span>
+<span class="ne">---&gt; </span><span class="mi">59</span>         <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># updates self.evaluations and self.method_data</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>         <span class="c1"># [ ] Dashboard -- how point to directory?? =&gt; #97</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span> 
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>pid</th>
-      <th>start</th>
-      <th>duration</th>
-      <th>t_process</th>
-      <th>score</th>
-      <th>pipeline</th>
-      <th>error</th>
-      <th>parent0</th>
-      <th>parent1</th>
-      <th>origin</th>
-      <th>n</th>
-      <th>r2</th>
-      <th>length</th>
-      <th>r2_cummax</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1723</th>
-      <td>67602</td>
-      <td>2022-02-07 02:26:27.617492</td>
-      <td>0 days 00:00:00.000099897</td>
-      <td>0.000106</td>
-      <td>(-inf, -1)</td>
-      <td>GradientBoostingRegressor(data, GradientBoosti...</td>
-      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
-      <td>b8156bf6-438e-4214-8da1-96b9f5bf9297</td>
-      <td>NaN</td>
-      <td>mut_replace_primitive</td>
-      <td>1723</td>
-      <td>-inf</td>
-      <td>1.0</td>
-      <td>-inf</td>
-    </tr>
-    <tr>
-      <th>11844</th>
-      <td>67602</td>
-      <td>2022-02-07 02:26:39.694808</td>
-      <td>0 days 00:00:00.000158787</td>
-      <td>0.000168</td>
-      <td>(-inf, -1)</td>
-      <td>ExtraTreesRegressor(data, ExtraTreesRegressor....</td>
-      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
-      <td>9fbe6057-c0b6-4fe4-8367-9a0517cb410a</td>
-      <td>NaN</td>
-      <td>mut_replace_terminal</td>
-      <td>11844</td>
-      <td>-inf</td>
-      <td>1.0</td>
-      <td>-inf</td>
-    </tr>
-    <tr>
-      <th>19798</th>
-      <td>67602</td>
-      <td>2022-02-07 02:26:49.353721</td>
-      <td>0 days 00:00:00.000094175</td>
-      <td>0.000099</td>
-      <td>(-inf, -1)</td>
-      <td>GradientBoostingRegressor(data, GradientBoosti...</td>
-      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
-      <td>651fc44b-8627-4484-a27e-9ea43ba446d2</td>
-      <td>NaN</td>
-      <td>mut_replace_terminal</td>
-      <td>19798</td>
-      <td>-inf</td>
-      <td>1.0</td>
-      <td>-inf</td>
-    </tr>
-    <tr>
-      <th>39169</th>
-      <td>67602</td>
-      <td>2022-02-07 02:27:13.003216</td>
-      <td>0 days 00:00:00.000119209</td>
-      <td>0.000125</td>
-      <td>(-inf, -1)</td>
-      <td>GradientBoostingRegressor(data, GradientBoosti...</td>
-      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
-      <td>46cf57c6-5d0c-4af2-ae91-ccc3d1086b70</td>
-      <td>NaN</td>
-      <td>mut_replace_primitive</td>
-      <td>39169</td>
-      <td>-inf</td>
-      <td>1.0</td>
-      <td>-inf</td>
-    </tr>
-    <tr>
-      <th>39496</th>
-      <td>67602</td>
-      <td>2022-02-07 02:27:13.391210</td>
-      <td>0 days 00:00:00.000097990</td>
-      <td>0.000106</td>
-      <td>(-inf, -1)</td>
-      <td>GradientBoostingRegressor(data, GradientBoosti...</td>
-      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
-      <td>2099ac82-f74d-43af-9868-8ff8385b339e</td>
-      <td>NaN</td>
-      <td>mut_replace_terminal</td>
-      <td>39496</td>
-      <td>-inf</td>
-      <td>1.0</td>
-      <td>-inf</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/logging/GamaReport.py</span> in <span class="ni">update</span><span class="nt">(self, force)</span>
+<span class="nn">     83                 return pd.Series([float(value) for value</span> in <span class="ni">tuple_str[1:-1].split</span><span class="nt">(&quot;,&quot;)])</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span> 
+<span class="ne">---&gt; </span><span class="mi">85</span>             <span class="n">df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">score</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tuple_to_metrics</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span>             <span class="n">df</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>  <span class="c1"># needed?</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span>             <span class="n">df</span><span class="o">.</span><span class="n">duration</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">duration</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">)</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/pandas/core/series.py</span> in <span class="ni">apply</span><span class="nt">(self, func, convert_dtype, args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4428</span>         <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<span class="g g-Whitespace">   </span><span class="mi">4429</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4430</span><span class="s2">         return SeriesApply(self, func, convert_dtype, args, kwargs).apply()</span>
+<span class="g g-Whitespace">   </span><span class="mi">4431</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4432</span><span class="s2">     def _reduce(</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/pandas/core/apply.py</span> in <span class="ni">apply</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1080</span><span class="s2">             return self.apply_str()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1081</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">1082</span><span class="s2">         return self.apply_standard()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1083</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1084</span><span class="s2">     def agg(self):</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/pandas/core/apply.py</span> in <span class="ni">apply_standard</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1135</span><span class="s2">                 # List[Union[Callable[..., Any], str]]]]]&quot;; expected</span>
+<span class="g g-Whitespace">   </span><span class="mi">1136</span><span class="s2">                 # &quot;Callable[[Any], Any]&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1137</span><span class="s2">                 mapped = lib.map_infer(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1138</span><span class="s2">                     values,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1139</span><span class="s2">                     f,  # type: ignore[arg-type]</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/pandas/_libs/lib.pyx</span> in <span class="ni">pandas._libs.lib.map_infer</span><span class="nt">()</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/logging/GamaReport.py</span> in <span class="ni">tuple_to_metrics</span><span class="nt">(tuple_str)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             def tuple_to_metrics(tuple_str):</span>
+<span class="nn">---&gt; 83                 return pd.Series([float(value) for value</span> in <span class="ni">tuple_str[1:-1].split</span><span class="nt">(&quot;,&quot;)])</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2">             df[self.metrics] = df.score.apply(tuple_to_metrics)</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/logging/GamaReport.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             def tuple_to_metrics(tuple_str):</span>
+<span class="nn">---&gt; 83                 return pd.Series([float(value) for value</span> in <span class="ni">tuple_str[1:-1].split</span><span class="nt">(&quot;,&quot;)])</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2">             df[self.metrics] = df.score.apply(tuple_to_metrics)</span>
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;cor&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>This dataframe has the following columns:</p>
 <ul class="simple">
@@ -905,68 +863,68 @@ postprocess BestFitPostProcessing after 0.0040s.
   <tbody>
     <tr>
       <th>0</th>
-      <td>67602</td>
-      <td>2022-02-07 02:26:25.720277</td>
-      <td>0 days 00:00:00.000186205</td>
-      <td>0.000183</td>
-      <td>(-inf, -1)</td>
-      <td>KNeighborsRegressor(data, KNeighborsRegressor....</td>
+      <td>79783</td>
+      <td>2022-02-02 22:23:44.711950</td>
+      <td>0 days 00:00:00.000200987</td>
+      <td>0.000197</td>
+      <td>(-inf, -3)</td>
+      <td>GradientBoostingRegressor(StandardScaler(MaxAb...</td>
       <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>new</td>
       <td>0</td>
       <td>-inf</td>
+      <td>3.0</td>
+      <td>-inf</td>
+    </tr>
+    <tr>
+      <th>29319</th>
+      <td>79783</td>
+      <td>2022-02-02 22:24:19.406984</td>
+      <td>0 days 00:00:00.000093937</td>
+      <td>0.000100</td>
+      <td>(-inf, -1)</td>
+      <td>GradientBoostingRegressor(data, GradientBoosti...</td>
+      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
+      <td>b664ffba-b8e4-4989-b205-0717fbcb3995</td>
+      <td>NaN</td>
+      <td>mut_replace_terminal</td>
+      <td>29319</td>
+      <td>-inf</td>
       <td>1.0</td>
       <td>-inf</td>
     </tr>
     <tr>
-      <th>28816</th>
-      <td>67602</td>
-      <td>2022-02-07 02:27:00.405074</td>
-      <td>0 days 00:00:00.000100136</td>
-      <td>0.000104</td>
+      <th>29311</th>
+      <td>79783</td>
+      <td>2022-02-02 22:24:19.398273</td>
+      <td>0 days 00:00:00.000107050</td>
+      <td>0.000112</td>
       <td>(-inf, -2)</td>
-      <td>ExtraTreesRegressor(MinMaxScaler(data), ExtraT...</td>
+      <td>ExtraTreesRegressor(FastICA(data, FastICA.tol=...</td>
       <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
-      <td>ca17e4fa-b21a-4770-890e-4312a5f86359</td>
+      <td>f5292317-1ea0-42a9-8ee3-505328a6bd9c</td>
       <td>NaN</td>
       <td>mut_insert</td>
-      <td>28816</td>
+      <td>29311</td>
       <td>-inf</td>
       <td>2.0</td>
       <td>-inf</td>
     </tr>
     <tr>
-      <th>115</th>
-      <td>67602</td>
-      <td>2022-02-07 02:26:25.783301</td>
-      <td>0 days 00:00:00.000125170</td>
-      <td>0.000131</td>
-      <td>(-inf, -3)</td>
-      <td>DecisionTreeRegressor(SelectPercentile(Normali...</td>
-      <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
-      <td>275f389d-6448-48a8-ad78-ca5a19b9b453</td>
-      <td>NaN</td>
-      <td>mut_insert</td>
-      <td>115</td>
-      <td>-inf</td>
-      <td>3.0</td>
-      <td>-inf</td>
-    </tr>
-    <tr>
-      <th>98</th>
-      <td>67602</td>
-      <td>2022-02-07 02:26:25.762962</td>
-      <td>0 days 00:00:00.000180960</td>
-      <td>0.000189</td>
+      <th>88</th>
+      <td>79783</td>
+      <td>2022-02-02 22:23:44.748849</td>
+      <td>0 days 00:00:00.000212908</td>
+      <td>0.000219</td>
       <td>(-inf, -4)</td>
-      <td>GradientBoostingRegressor(VarianceThreshold(No...</td>
+      <td>DecisionTreeRegressor(StandardScaler(Normalize...</td>
       <td>&lt;class 'TypeError'&gt; check_cv() takes from 0 to...</td>
-      <td>0d12ebe3-3ef4-4c14-a9da-03caa762260f</td>
+      <td>d4670a36-d05a-445d-9d17-18dd92f205b2</td>
       <td>NaN</td>
       <td>mut_insert</td>
-      <td>98</td>
+      <td>88</td>
       <td>-inf</td>
       <td>4.0</td>
       <td>-inf</td>
@@ -1040,9 +998,7 @@ Take a short break once it’s all running, or ask us a question about the lectu
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using GAMA version 20.2.1.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INIT:GamaClassifier(scoring=accuracy,regularize_length=True,max_pipeline_length=None,random_state=None,max_total_time=60,max_eval_time=None,n_jobs=2,max_memory_mb=None,verbosity=20,search=AsyncEA(),post_processing=BestFitPostProcessing(),output_directory=gama_log2,store=logs)
+INIT:GamaClassifier(scoring=accuracy,regularize_length=True,max_pipeline_length=None,random_state=None,max_total_time=180,max_eval_time=None,n_jobs=2,max_memory_mb=None,verbosity=20,search=AsyncEA(),post_processing=BestFitPostProcessing(),output_directory=gama_log2,store=logs)
 </pre></div>
 </div>
 </div>
@@ -1055,12 +1011,8 @@ Take a short break once it’s all running, or ask us a question about the lectu
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>START: preprocessing default
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STOP: preprocessing default after 0.0893s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>START: search AsyncEA
+STOP: preprocessing default after 0.0864s.
+START: search AsyncEA
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
@@ -1072,101 +1024,8 @@ Take a short break once it’s all running, or ask us a question about the lectu
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
   import pandas.util.testing as tm
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
   import pandas.util.testing as tm
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time exceeded during callback, but exception was swallowed.
-Search phase evaluated 39358 individuals.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STOP: search AsyncEA after 53.1127s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>START: postprocess BestFitPostProcessing
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Logging error ---
-Traceback (most recent call last):
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/logging/__init__.py&quot;, line 1086, in emit
-    stream.write(msg + self.terminator)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel/iostream.py&quot;, line 539, in write
-    self._schedule_flush()
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel/iostream.py&quot;, line 449, in _schedule_flush
-    self.pub_thread.schedule(_schedule_in_thread)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel/iostream.py&quot;, line 214, in schedule
-    self._event_pipe.send(b&#39;&#39;)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/zmq/sugar/socket.py&quot;, line 547, in send
-    return super(Socket, self).send(data, flags=flags, copy=copy, track=track)
-stopit.utils.TimeoutException
-Call stack:
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/runpy.py&quot;, line 87, in _run_code
-    exec(code, run_globals)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;
-    app.launch_new_instance()
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 846, in launch_instance
-    app.start()
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 677, in start
-    self.io_loop.start()
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
-    self.asyncio_loop.run_forever()
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/asyncio/base_events.py&quot;, line 596, in run_forever
-    self._run_once()
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/asyncio/base_events.py&quot;, line 1890, in _run_once
-    handle._run()
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 457, in dispatch_queue
-    await self.process_one()
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 446, in process_one
-    await dispatch(*args)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 353, in dispatch_shell
-    await result
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 648, in execute_request
-    reply_content = await reply_content
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 353, in do_execute
-    res = shell.run_cell(code, store_history=store_history, silent=silent)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 532, in run_cell
-    return super().run_cell(*args, **kwargs)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2914, in run_cell
-    result = self._run_cell(
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2960, in _run_cell
-    return runner(coro)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 78, in _pseudo_sync_runner
-    coro.send(None)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3185, in run_cell_async
-    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3377, in run_ast_nodes
-    if (await self.run_code(code, result,  async_=asy)):
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3457, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/var/folders/0t/5d8ttqzd773fy0wq3h5db0xr0000gn/T/ipykernel_67586/1420798486.py&quot;, line 1, in &lt;module&gt;
-    automl.fit(X_train, y_train)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/GamaClassifier.py&quot;, line 134, in fit
-    super().fit(x, y, *args, **kwargs)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/gama.py&quot;, line 523, in fit
-    self._search_phase(warm_start, timeout=fit_time)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/gama.py&quot;, line 581, in _search_phase
-    self._search_method.search(self._operator_set, start_candidates=pop)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/search_methods/async_ea.py&quot;, line 66, in search
-    self.output = async_ea(
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/search_methods/async_ea.py&quot;, line 124, in async_ea
-    future = ops.wait_next(async_)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/genetic_programming/operator_set.py&quot;, line 50, in wait_next
-    self._evaluate_callback(evaluation)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/gama.py&quot;, line 658, in _on_evaluation_completed
-    self._safe_outside_call(partial(callback, evaluation))
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/gama.py&quot;, line 653, in _safe_outside_call
-    log.info(&quot;Time exceeded during callback, but exception was swallowed.&quot;)
-Message: &#39;Time exceeded during callback, but exception was swallowed.&#39;
-Arguments: ()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STOP: postprocess BestFitPostProcessing after 0.5529s.
 </pre></div>
 </div>
 </div>
@@ -1174,11 +1033,6 @@ Arguments: ()
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">automl</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6170012319733315
 </pre></div>
 </div>
 </div>
@@ -1206,14 +1060,6 @@ GAMA can be configured to automatically build an ensemble from the models it fou
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using GAMA version 20.2.1.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INIT:GamaClassifier(scoring=accuracy,regularize_length=True,max_pipeline_length=None,random_state=None,max_total_time=60,max_eval_time=None,n_jobs=2,max_memory_mb=None,verbosity=20,search=AsyncEA(),post_processing=EnsemblePostProcessing(ensemble_size=25,hillclimb_size=10000,max_models=200),output_directory=gama_log3,store=logs)
-</pre></div>
-</div>
-</div>
 </div>
 <p>Again, start search and record the test set score:</p>
 <div class="cell docutils container">
@@ -1223,117 +1069,11 @@ GAMA can be configured to automatically build an ensemble from the models it fou
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>START: preprocessing default
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data has too many features to include PolynomialFeatures
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STOP: preprocessing default after 0.0828s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>START: search AsyncEA
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
-  import pandas.util.testing as tm
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting EA with new population.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
-  import pandas.util.testing as tm
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/jvanscho/miniforge3/lib/python3.9/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
-  import pandas.util.testing as tm
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time exceeded during callback, but exception was swallowed.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Search phase evaluated 31695 individuals.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STOP: search AsyncEA after 41.0891s.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>START: postprocess EnsemblePostProcessing
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not downsampling because only 10000 samples were stored.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error during auto ensemble: division by zero
-Traceback (most recent call last):
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/postprocessing/ensemble.py&quot;, line 524, in build_fit_ensemble
-    ensemble.build_initial_ensemble(10)
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/postprocessing/ensemble.py&quot;, line 265, in build_initial_ensemble
-    self._ensemble_validation_score()
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/postprocessing/ensemble.py&quot;, line 444, in _ensemble_validation_score
-    prediction_to_validate = self._averaged_validation_predictions()
-  File &quot;/Users/jvanscho/miniforge3/lib/python3.9/site-packages/gama/postprocessing/ensemble.py&quot;, line 240, in _averaged_validation_predictions
-    return weighted_sum_predictions / self._total_model_weights()
-ZeroDivisionError: division by zero
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STOP: postprocess EnsemblePostProcessing after 0.0031s.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">automl_with_ensemble</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ensemble score: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">0</span><span class="n">t</span><span class="o">/</span><span class="mi">5</span><span class="n">d8ttqzd773fy0wq3h5db0xr0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_67586</span><span class="o">/</span><span class="mf">2789895616.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">score</span> <span class="o">=</span> <span class="n">automl_with_ensemble</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ensemble score: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">))</span>
-
-<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/gama.py</span> in <span class="ni">score</span><span class="nt">(self, x, y)</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>             <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
-<span class="g g-Whitespace">    </span><span class="mi">384</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">requires_probabilities</span>
-<span class="ne">--&gt; </span><span class="mi">385</span>             <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">387</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-
-<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/gama.py</span> in <span class="ni">predict</span><span class="nt">(self, x)</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span><span class="sd">         x = self._prepare_for_prediction(x)</span>
-<span class="ne">--&gt; </span><span class="mi">330</span><span class="sd">         return self._predict(x)</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span><span class="sd">     def predict_from_file(</span>
-
-<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/GamaClassifier.py</span> in <span class="ni">_predict</span><span class="nt">(self, x)</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span><span class="sd">             Array with predictions of shape (N,) where N is len(X).</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">53</span>         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
-<span class="g g-Whitespace">     </span><span class="mi">54</span>         <span class="c1"># Decode the predicted labels - necessary only if ensemble is not used.</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span>         <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label_encoder</span><span class="o">.</span><span class="n">classes_</span><span class="p">:</span>
-
-<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/postprocessing/ensemble.py</span> in <span class="ni">predict</span><span class="nt">(self, X)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">465</span>             <span class="n">class_probabilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_weighted_mean_predictions</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>                 <span class="n">X</span><span class="p">,</span> <span class="s2">&quot;predict&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>             <span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-
-<span class="nn">~/miniforge3/lib/python3.9/site-packages/gama/postprocessing/ensemble.py</span> in <span class="ni">_get_weighted_mean_predictions</span><span class="nt">(self, X, predict_method)</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span>     <span class="k">def</span> <span class="nf">_get_weighted_mean_predictions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">predict_method</span><span class="o">=</span><span class="s2">&quot;predict&quot;</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">358</span>         <span class="n">weighted_predictions</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ne">--&gt; </span><span class="mi">359</span>         <span class="k">for</span> <span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_models</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span>             <span class="n">target_prediction</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">predict_method</span><span class="p">)(</span><span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prediction_transformation</span><span class="p">:</span>
-
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not iterable
 </pre></div>
 </div>
 </div>

@@ -786,8 +786,8 @@ It is cheaper to create an array with placeholders than extending it later.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 3, 3, 1],
-       [1, 3, 0, 1]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 2, 4, 4],
+       [1, 3, 1, 0]])
 </pre></div>
 </div>
 </div>
@@ -878,7 +878,7 @@ The matrix product can be performed using dot()</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.130033918029117, 0.1924028076078006, 0.7884201283555274)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2.561834677158697, 0.027710307123145927, 0.6453887597695327)
 </pre></div>
 </div>
 </div>
@@ -933,9 +933,9 @@ The matrix product can be performed using dot()</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 5., 8., 9.],
-       [6., 6., 4., 8.],
-       [9., 6., 0., 1.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3., 3., 9., 7.],
+       [1., 1., 5., 8.],
+       [5., 8., 3., 9.]])
 </pre></div>
 </div>
 </div>
@@ -953,8 +953,8 @@ The matrix product can be performed using dot()</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3., 4., 9., 8., 4., 3.],
-       [6., 8., 2., 5., 1., 8.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 9., 2., 1., 6., 7.],
+       [6., 8., 4., 8., 9., 0.]])
 </pre></div>
 </div>
 </div>
@@ -1566,31 +1566,31 @@ dtype: float64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.419469</td>
-      <td>-0.122738</td>
-      <td>-1.389802</td>
-      <td>0.696421</td>
+      <td>0.164521</td>
+      <td>1.054276</td>
+      <td>0.531047</td>
+      <td>-1.995599</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-2.743536</td>
-      <td>2.522921</td>
-      <td>1.096316</td>
-      <td>-1.102964</td>
+      <td>-0.897984</td>
+      <td>0.848107</td>
+      <td>2.014461</td>
+      <td>-1.169431</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>-1.007377</td>
-      <td>-0.639128</td>
-      <td>-0.225413</td>
-      <td>-0.229945</td>
+      <td>0.554449</td>
+      <td>-0.546570</td>
+      <td>-1.610468</td>
+      <td>-2.029526</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>1.177428</td>
-      <td>1.348194</td>
-      <td>-2.231846</td>
-      <td>1.306257</td>
+      <td>-1.190858</td>
+      <td>-0.197919</td>
+      <td>0.706468</td>
+      <td>1.393821</td>
     </tr>
   </tbody>
 </table>
@@ -1605,10 +1605,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.41946918, -0.12273791, -1.38980206,  0.69642075],
-       [-2.74353631,  2.52292071,  1.09631614, -1.10296408],
-       [-1.00737685, -0.6391279 , -0.22541326, -0.2299446 ],
-       [ 1.17742845,  1.34819368, -2.23184638,  1.30625722]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.16452097,  1.05427573,  0.53104728, -1.99559911],
+       [-0.89798441,  0.84810678,  2.01446116, -1.16943075],
+       [ 0.55444867, -0.5465696 , -1.6104681 , -2.02952555],
+       [-1.19085812, -0.197919  ,  0.70646811,  1.39382064]])
 </pre></div>
 </div>
 </div>
@@ -1668,31 +1668,31 @@ dtype: float64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.419469</td>
-      <td>-0.122738</td>
-      <td>-1.389802</td>
-      <td>0.696421</td>
+      <td>0.164521</td>
+      <td>1.054276</td>
+      <td>0.531047</td>
+      <td>-1.995599</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-2.743536</td>
-      <td>2.522921</td>
-      <td>1.096316</td>
-      <td>-1.102964</td>
+      <td>-0.897984</td>
+      <td>0.848107</td>
+      <td>2.014461</td>
+      <td>-1.169431</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>-1.007377</td>
-      <td>-0.639128</td>
-      <td>-0.225413</td>
-      <td>-0.229945</td>
+      <td>0.554449</td>
+      <td>-0.546570</td>
+      <td>-1.610468</td>
+      <td>-2.029526</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>1.177428</td>
-      <td>1.348194</td>
-      <td>-2.231846</td>
-      <td>1.306257</td>
+      <td>-1.190858</td>
+      <td>-0.197919</td>
+      <td>0.706468</td>
+      <td>1.393821</td>
     </tr>
   </tbody>
 </table>
@@ -1740,52 +1740,52 @@ dtype: float64
     </tr>
     <tr>
       <th>mean</th>
-      <td>-0.538504</td>
-      <td>0.777312</td>
-      <td>-0.687686</td>
-      <td>0.167442</td>
+      <td>-0.342468</td>
+      <td>0.289473</td>
+      <td>0.410377</td>
+      <td>-0.950184</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>1.726668</td>
-      <td>1.436367</td>
-      <td>1.446116</td>
-      <td>1.056498</td>
+      <td>0.834638</td>
+      <td>0.781774</td>
+      <td>1.501014</td>
+      <td>1.612482</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>-2.743536</td>
-      <td>-0.639128</td>
-      <td>-2.231846</td>
-      <td>-1.102964</td>
+      <td>-1.190858</td>
+      <td>-0.546570</td>
+      <td>-1.610468</td>
+      <td>-2.029526</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>-1.441417</td>
-      <td>-0.251835</td>
-      <td>-1.600313</td>
-      <td>-0.448199</td>
+      <td>-0.971203</td>
+      <td>-0.285082</td>
+      <td>-0.004332</td>
+      <td>-2.004081</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>-0.293954</td>
-      <td>0.612728</td>
-      <td>-0.807608</td>
-      <td>0.233238</td>
+      <td>-0.366732</td>
+      <td>0.325094</td>
+      <td>0.618758</td>
+      <td>-1.582515</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>0.608959</td>
-      <td>1.641875</td>
-      <td>0.105019</td>
-      <td>0.848880</td>
+      <td>0.262003</td>
+      <td>0.899649</td>
+      <td>1.033466</td>
+      <td>-0.528618</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>1.177428</td>
-      <td>2.522921</td>
-      <td>1.096316</td>
-      <td>1.306257</td>
+      <td>0.554449</td>
+      <td>1.054276</td>
+      <td>2.014461</td>
+      <td>1.393821</td>
     </tr>
   </tbody>
 </table>
@@ -1826,31 +1826,31 @@ dtype: float64
   <tbody>
     <tr>
       <th>A</th>
-      <td>0.419469</td>
-      <td>-2.743536</td>
-      <td>-1.007377</td>
-      <td>1.177428</td>
+      <td>0.164521</td>
+      <td>-0.897984</td>
+      <td>0.554449</td>
+      <td>-1.190858</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>-0.122738</td>
-      <td>2.522921</td>
-      <td>-0.639128</td>
-      <td>1.348194</td>
+      <td>1.054276</td>
+      <td>0.848107</td>
+      <td>-0.546570</td>
+      <td>-0.197919</td>
     </tr>
     <tr>
       <th>C</th>
-      <td>-1.389802</td>
-      <td>1.096316</td>
-      <td>-0.225413</td>
-      <td>-2.231846</td>
+      <td>0.531047</td>
+      <td>2.014461</td>
+      <td>-1.610468</td>
+      <td>0.706468</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>0.696421</td>
-      <td>-1.102964</td>
-      <td>-0.229945</td>
-      <td>1.306257</td>
+      <td>-1.995599</td>
+      <td>-1.169431</td>
+      <td>-2.029526</td>
+      <td>1.393821</td>
     </tr>
   </tbody>
 </table>
@@ -1892,31 +1892,31 @@ dtype: float64
   <tbody>
     <tr>
       <th>2013-01-03</th>
-      <td>-1.007377</td>
-      <td>-0.639128</td>
-      <td>-0.225413</td>
-      <td>-0.229945</td>
-    </tr>
-    <tr>
-      <th>2013-01-01</th>
-      <td>0.419469</td>
-      <td>-0.122738</td>
-      <td>-1.389802</td>
-      <td>0.696421</td>
+      <td>0.554449</td>
+      <td>-0.546570</td>
+      <td>-1.610468</td>
+      <td>-2.029526</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>1.177428</td>
-      <td>1.348194</td>
-      <td>-2.231846</td>
-      <td>1.306257</td>
+      <td>-1.190858</td>
+      <td>-0.197919</td>
+      <td>0.706468</td>
+      <td>1.393821</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-2.743536</td>
-      <td>2.522921</td>
-      <td>1.096316</td>
-      <td>-1.102964</td>
+      <td>-0.897984</td>
+      <td>0.848107</td>
+      <td>2.014461</td>
+      <td>-1.169431</td>
+    </tr>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.164521</td>
+      <td>1.054276</td>
+      <td>0.531047</td>
+      <td>-1.995599</td>
     </tr>
   </tbody>
 </table>
@@ -1933,10 +1933,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2013-01-01    0.419469
-2013-01-02   -2.743536
-2013-01-03   -1.007377
-2013-01-04    1.177428
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2013-01-01    0.164521
+2013-01-02   -0.897984
+2013-01-03    0.554449
+2013-01-04   -1.190858
 Freq: D, Name: A, dtype: float64
 </pre></div>
 </div>
@@ -1977,18 +1977,18 @@ Freq: D, Name: A, dtype: float64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.419469</td>
-      <td>-0.122738</td>
+      <td>0.164521</td>
+      <td>1.054276</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>-2.743536</td>
-      <td>2.522921</td>
+      <td>-0.897984</td>
+      <td>0.848107</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>-1.007377</td>
-      <td>-0.639128</td>
+      <td>0.554449</td>
+      <td>-0.546570</td>
     </tr>
   </tbody>
 </table>
@@ -2030,11 +2030,11 @@ Freq: D, Name: A, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>2013-01-01</th>
-      <td>0.419469</td>
-      <td>-0.122738</td>
-      <td>-1.389802</td>
-      <td>0.696421</td>
+      <th>2013-01-03</th>
+      <td>0.554449</td>
+      <td>-0.54657</td>
+      <td>-1.610468</td>
+      <td>-2.029526</td>
     </tr>
   </tbody>
 </table>
@@ -2053,10 +2053,10 @@ Freq: D, Name: A, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2013-01-01   -0.099163
-2013-01-02   -0.056816
-2013-01-03   -0.525466
-2013-01-04    0.400008
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2013-01-01   -0.061439
+2013-01-02    0.198788
+2013-01-03   -0.908029
+2013-01-04    0.177878
 Freq: D, dtype: float64
 </pre></div>
 </div>
@@ -2097,31 +2097,31 @@ Freq: D, dtype: float64
   <tbody>
     <tr>
       <th>2013-01-01</th>
-      <td>0.419469</td>
-      <td>0.122738</td>
-      <td>1.389802</td>
-      <td>0.696421</td>
+      <td>0.164521</td>
+      <td>1.054276</td>
+      <td>0.531047</td>
+      <td>1.995599</td>
     </tr>
     <tr>
       <th>2013-01-02</th>
-      <td>2.743536</td>
-      <td>2.522921</td>
-      <td>1.096316</td>
-      <td>1.102964</td>
+      <td>0.897984</td>
+      <td>0.848107</td>
+      <td>2.014461</td>
+      <td>1.169431</td>
     </tr>
     <tr>
       <th>2013-01-03</th>
-      <td>1.007377</td>
-      <td>0.639128</td>
-      <td>0.225413</td>
-      <td>0.229945</td>
+      <td>0.554449</td>
+      <td>0.546570</td>
+      <td>1.610468</td>
+      <td>2.029526</td>
     </tr>
     <tr>
       <th>2013-01-04</th>
-      <td>1.177428</td>
-      <td>1.348194</td>
-      <td>2.231846</td>
-      <td>1.306257</td>
+      <td>1.190858</td>
+      <td>0.197919</td>
+      <td>0.706468</td>
+      <td>1.393821</td>
     </tr>
   </tbody>
 </table>
@@ -2137,10 +2137,10 @@ Freq: D, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    3.920965
-B    3.162049
-C    3.328163
-D    2.409221
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    1.745307
+B    1.600845
+C    3.624929
+D    3.423346
 dtype: float64
 </pre></div>
 </div>
@@ -2191,24 +2191,24 @@ dtype: float64
     <tr>
       <th rowspan="2" valign="top">bar</th>
       <th>one</th>
-      <td>-0.365106</td>
-      <td>0.055980</td>
+      <td>-0.724690</td>
+      <td>-0.219162</td>
     </tr>
     <tr>
       <th>three</th>
-      <td>-2.627856</td>
-      <td>-0.541252</td>
+      <td>1.394466</td>
+      <td>-0.414954</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">foo</th>
       <th>one</th>
-      <td>2.320643</td>
-      <td>-0.422494</td>
+      <td>0.448470</td>
+      <td>-0.231221</td>
     </tr>
     <tr>
       <th>two</th>
-      <td>-0.456335</td>
-      <td>0.856097</td>
+      <td>-1.239404</td>
+      <td>0.422500</td>
     </tr>
   </tbody>
 </table>
