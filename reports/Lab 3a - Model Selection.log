@@ -28,7 +28,7 @@ Xs_test = scaler.transform(X_test)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/0t/5d8ttqzd773fy0wq3h5db0xr0000gn/T/ipykernel_16885/1729114955.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/0t/5d8ttqzd773fy0wq3h5db0xr0000gn/T/ipykernel_67300/1729114955.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      3[0m [0;31m# Then, use it to scale both the training set and test set[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      4[0m [0;31m# This assumes that you named your training set X_train. Adapt if needed.[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 5[0;31m [0mscaler[0m [0;34m=[0m [0mStandardScaler[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mfit[0m[0;34m([0m[0mX_train[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

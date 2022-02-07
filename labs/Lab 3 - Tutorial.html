@@ -137,6 +137,31 @@
    Lecture 5. Ensemble Learning
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/06%20-%20Data%20Preprocessing.html">
+   Lecture 6. Data preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/07%20-%20Bayesian%20Learning.html">
+   Lecture 7. Bayesian Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/08%20-%20Neural%20Networks.html">
+   Lecture 8. Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/09%20-%20Convolutional%20Neural%20Networks.html">
+   Lecture 9: Convolutional Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/10%20-%20Neural%20Networks%20for%20text.html">
+   Lecture 10. Neural Networks for text
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -697,7 +722,7 @@ Variance in cross-validation score: 0.0006
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validation scores KFold(n_splits=5):
 [1.         1.         0.86666667 0.93333333 0.83333333]
 Cross-validation scores StratifiedKFold(n_splits=5, shuffle=True):
-[1.         0.96666667 0.93333333 1.         0.93333333]
+[1.         0.93333333 1.         0.9        0.96666667]
 </pre></div>
 </div>
 </div>
@@ -738,8 +763,8 @@ Mean accuracy: 0.97
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross-validation scores:
-[0.96       0.97333333 0.94666667 0.97333333 0.94666667 0.97333333
- 0.94666667 0.92       0.96       0.96      ]
+[0.94666667 0.92       0.97333333 1.         1.         0.98666667
+ 0.96       0.94666667 0.98666667 0.98666667]
 </pre></div>
 </div>
 </div>
@@ -1059,7 +1084,9 @@ Macro average f1 score: 0.925
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Explicit accuracy scoring: [0.975      0.99166667 1.         0.99442897 0.98050139]
-AUC scoring: [0.99717078 0.99854252 1.         0.999828   0.98400413]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AUC scoring: [0.99717078 0.99854252 1.         0.999828   0.98400413]
 </pre></div>
 </div>
 </div>
@@ -1249,8 +1276,8 @@ Mean cross-validation score:  0.9666666666666668
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomizedSearchCV(estimator=SVC(), n_iter=20,
-                   param_distributions={&#39;C&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x16c9502e0&gt;,
-                                        &#39;gamma&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x16c9665e0&gt;})
+                   param_distributions={&#39;C&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x108224fd0&gt;,
+                                        &#39;gamma&#39;: &lt;scipy.stats._distn_infrastructure.rv_frozen object at 0x1410914f0&gt;})
 </pre></div>
 </div>
 </div>

@@ -135,6 +135,31 @@
    Lecture 5. Ensemble Learning
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/06%20-%20Data%20Preprocessing.html">
+   Lecture 6. Data preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/07%20-%20Bayesian%20Learning.html">
+   Lecture 7. Bayesian Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/08%20-%20Neural%20Networks.html">
+   Lecture 8. Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/09%20-%20Convolutional%20Neural%20Networks.html">
+   Lecture 9: Convolutional Neural Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/10%20-%20Neural%20Networks%20for%20text.html">
+   Lecture 10. Neural Networks for text
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -358,8 +383,8 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tweaks">
-       Tweaks
+      <a class="reference internal nav-link" href="#customization">
+       Customization
       </a>
      </li>
     </ul>
@@ -407,8 +432,8 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tweaks">
-       Tweaks
+      <a class="reference internal nav-link" href="#customization">
+       Customization
       </a>
      </li>
     </ul>
@@ -464,20 +489,10 @@
 </pre></div>
 </div>
 <p>To generate PDF handouts, remove <code class="docutils literal notranslate"><span class="pre">#/</span></code> from the url and add <code class="docutils literal notranslate"><span class="pre">?print-pdf</span></code>, then print as PDF.</p>
-<div class="section" id="tweaks">
-<h4>Tweaks<a class="headerlink" href="#tweaks" title="Permalink to this headline">¶</a></h4>
-<p>I used a few tweaks to the slide theme by adding these to the css in <code class="docutils literal notranslate"><span class="pre">custom_reveal.css</span></code> in the <code class="docutils literal notranslate"><span class="pre">nbconvert</span></code> reveal template:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.highlight {
-    background: none !important;
-}
-.highlight pre {
-    font-size: 1em !important;
-}
-.jp-OutputArea-output pre {
-    font-size: 0.35em !important;
-}
-</pre></div>
-</div>
+<p>Sidenote: Some PDF readers (e.g. Preview) sometimes show grey boxes around code examples, others (e.g. Acrobat Reader, Chrome) do not. Must be an artifact of some PDF readers.</p>
+<div class="section" id="customization">
+<h4>Customization<a class="headerlink" href="#customization" title="Permalink to this headline">¶</a></h4>
+<p>I used a few tweaks to the slide theme by adding these to the css in <code class="docutils literal notranslate"><span class="pre">custom_reveal.css</span></code> in the <code class="docutils literal notranslate"><span class="pre">nbconvert</span></code> reveal template. Copy the styles from slides_html/custom.css to this file.</p>
 <p>There also seems to be a bug in reveal that outputs text for hidden interactive elements. I added the following to <code class="docutils literal notranslate"><span class="pre">index.html.j2</span></code> of the same template:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
 <span class="n">var</span> <span class="n">els</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;pre&quot;</span><span class="p">);</span>
